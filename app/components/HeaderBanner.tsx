@@ -13,7 +13,7 @@ export default function HeaderBanner() {
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         
         {/* Top Row: Logos and Icons */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
           
           {/* Left Logo - National SC-ST Hub */}
           <div style={{ width: '120px', height: '120px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.5rem', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
@@ -21,7 +21,7 @@ export default function HeaderBanner() {
           </div>
 
           {/* Center Icons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
             {/* Phule */}
             <div style={{ width: '90px', height: '110px' }}>
               <img src={members[0].src} alt={members[0].name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
@@ -54,7 +54,7 @@ export default function HeaderBanner() {
         </div>
 
         {/* Middle Row: Ovals and Text */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', width: '100%', marginTop: '1rem' }}>
           
           {/* Left Oval */}
           <div style={{ backgroundColor: '#fde047', borderRadius: '50%', padding: '1rem 2rem', textAlign: 'center', color: '#065f46', fontWeight: 'bold', fontSize: '1.25rem', flex: '0 0 auto', border: '2px solid transparent', boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1)' }}>

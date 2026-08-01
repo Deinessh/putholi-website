@@ -175,7 +175,9 @@ a:hover {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
   align-items: center;
 }
 

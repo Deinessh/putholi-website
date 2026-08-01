@@ -37,6 +37,7 @@ export default function Navbar() {
     { href: '/program', id: 'program', label: 'Program' },
     { href: '/membership', id: 'membership', label: 'Membership' },
     { href: '/gallery', id: 'gallery', label: 'Gallery' },
+    { href: '/references', id: 'references', label: 'References' },
     { href: '/contact', id: 'contact', label: 'Contact' },
   ];
 

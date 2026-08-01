@@ -1,68 +1,88 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+"use client";
 
-export const metadata: Metadata = {
-  title: 'Membership & Contribution | Putholi Empowerment Society',
-};
+import { motion } from 'framer-motion';
 
 export default function Membership() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <div className="container" style={{ padding: 'var(--spacing-2xl) 0' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '1rem' }}>Membership & Contribution</h1>
-      <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', marginBottom: 'var(--spacing-2xl)' }}>
-        "Putholi Empowerment Society" welcomes like-minded people with generosity to take care of solving the problems of social and economic inequalities.
-      </p>
-
-      <section className="glass-panel" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-        <h2 style={{ color: 'var(--primary-color)' }}>PAYBACK TO SOCIETY</h2>
-        <p style={{ marginBottom: '1rem' }}>
-          We welcome the people who have been benefitted by the Reservation Policy brought by Babhasaheb Dr. B.R. Ambedkar, to take the responsibility of his principal requisition of "PAYBACK TO SOCIETY".
-        </p>
-        <p>
-          We put-forth the requisition to the people to payback their contribution for society by their <strong>Time, Knowledge, Experience & Little Money</strong>. You are welcome to join as a 'Member of Putholi Empowerment Society of India'.
-        </p>
-      </section>
-
-      <div className="grid md:grid-cols-2 gap-lg" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-        <div className="glass-panel" style={{ borderTop: '4px solid var(--accent-color)' }}>
-          <h3 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Membership Fee Structure</h3>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li className="flex justify-between" style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--glass-border)' }}>
-              <span>Enrollment Fee (One time)</span>
-              <strong>Rs. 500/-</strong>
-            </li>
-            <li className="flex justify-between" style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--glass-border)' }}>
-              <span>Annual Subscription Fee</span>
-              <strong>Rs. 1000/-</strong>
-            </li>
-            <li className="flex justify-between" style={{ padding: '0.75rem 0', paddingTop: '1rem' }}>
-              <span style={{ color: 'var(--primary-color)', fontWeight: 'bold' }}>Lifetime Membership Fee</span>
-              <strong style={{ color: 'var(--primary-color)' }}>Rs. 10,000/-</strong>
-            </li>
-          </ul>
-        </div>
+      <motion.div initial="hidden" animate="visible" variants={containerVariants}>
         
-        <div className="glass-panel">
-          <h3 style={{ marginBottom: '1rem' }}>How to Join</h3>
-          <p style={{ marginBottom: '1rem' }}>
-            Pay the "Enrollment Fee & Annual Subscription Fee" (Total Rs. 1,500/-) or "Enrollment Fee & Lifetime Membership Fee" (Total Rs. 10,500/-) by online payments.
+        <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h1 style={{ color: 'var(--primary-color)' }}>Membership & Contribution</h1>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="glass-panel" style={{ marginBottom: '3rem' }}>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            "Putholi Empowerment Society" welcomes the like-minded people with generosity for taking care on solving the problems of social and economic inequalities in the society. It also welcomes the people who have been benefitted by the Reservation Policy which was brought by Babhasahep Dr.B.R.Ambedkar, to take the responsibility of his principal requisition of "PAYBACK TO SOCIETY", on thankfulness to his efforts for constituted the reservation-opportunity in Indian Constitution.
           </p>
-          <p style={{ marginBottom: '1.5rem' }}>
-            After payment, fill out the Membership Form and attach your Passport-size Photo, ID-proof issued by Govt (containing photo and signature), and your payment screenshot.
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            PUTHOLI (new light) put-forth the requisition to the people (who got the benefits by education, job opportunities & other form) to payback their contribution for society by their <strong>"Time, Knowledge, Experience & Little Money"</strong>.
           </p>
-          <div style={{ textAlign: 'center' }}>
-            <Link href="/join" className="btn btn-primary" style={{ width: '100%' }}>Proceed to Membership Form</Link>
-          </div>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+            As a little contribution by money, they are welcome to join as a 'Member of Putholi Empowerment Society of India' by paying the following Membership Fee:
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-lg" style={{ marginBottom: '3rem' }}>
+          {/* Fee Details */}
+          <motion.div variants={itemVariants} className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--primary-color)' }}>
+            <h2 style={{ color: 'var(--primary-color)', marginBottom: '1.5rem' }}>Membership Fees</h2>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '1.1rem' }}>
+              <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.5rem' }}>
+                <span>Enrollment Fee:</span> <strong>Rs. 500/- (one time)</strong>
+              </li>
+              <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.5rem' }}>
+                <span>Annual Subscription Fee:</span> <strong>Rs. 1000/-</strong>
+              </li>
+              <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.5rem' }}>
+                <span>Lifetime Membership Fee:</span> <strong>Rs. 10,000/-</strong>
+              </li>
+            </ul>
+            <div style={{ marginTop: '1.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
+              <p style={{ marginBottom: '0.5rem' }}>The people who want to pay "Enrollment Fee & Annual Subscription Fee" may pay both amount <strong>Rs. 1,500/-</strong> by online payments.</p>
+              <p>The people who like to become Lifetime Membership can pay the "Enrollment Fee & Lifetime Membership Fee" as <strong>Rs. 10,500/-</strong> online.</p>
+            </div>
+            <div style={{ marginTop: '2rem' }}>
+              <a href="/join" className="nav-btn" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>Fill Membership Form (Online)</a>
+            </div>
+          </motion.div>
+
+          {/* Bank Details */}
+          <motion.div variants={itemVariants} className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--secondary-color)' }}>
+            <h2 style={{ color: 'var(--secondary-color)', marginBottom: '1.5rem' }}>Bank Account Details</h2>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+              <strong>Bank Name:</strong> CANARA BANK<br />
+              <strong>Branch Details:</strong> Thiruvanmiyur, Chennai-600041<br />
+              <strong>Account Name:</strong> Putholi Empowerment Society<br />
+              <strong>Account Number:</strong> 110021534790<br />
+              <strong>IFSC:</strong> CNRB0002649
+            </p>
+            <div style={{ marginTop: '1.5rem', padding: '1rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem', fontSize: '0.95rem', borderLeft: '4px solid var(--secondary-color)' }}>
+              <p>Apart from the stipulated contributions, donations and materials required to set up Centre for Career Guidance as they can / wish may be provided.</p>
+            </div>
+          </motion.div>
         </div>
-      </div>
-      
-      <section className="glass-panel" style={{ textAlign: 'center' }}>
-        <h2 style={{ color: 'var(--secondary-color)', marginBottom: '1rem' }}>Work With Us (As Volunteers)</h2>
-        <p style={{ marginBottom: '1.5rem' }}>
-          We are pleased to welcome aspirants who want to work as Volunteers to take part in the 'Vision & Mission' of Putholi. We appreciate your great contribution of <strong>Time, Knowledge and Experience</strong>.
-        </p>
-        <Link href="/join" className="btn" style={{ background: 'white', border: '1px solid var(--secondary-color)', color: 'var(--secondary-color)' }}>Volunteer Form</Link>
-      </section>
+
+        {/* Work With Us */}
+        <motion.div variants={itemVariants} style={{ textAlign: 'center', backgroundColor: 'var(--primary-color)', color: 'white', padding: '3rem', borderRadius: '1rem' }}>
+          <h2 style={{ marginBottom: '1rem', color: 'white' }}>WORK WITH US (AS VOLUNTEERS)</h2>
+          <p style={{ fontSize: '1.15rem', maxWidth: '800px', margin: '0 auto 2rem', lineHeight: '1.8' }}>
+            We are pleasure to welcome the aspirants who want to work with as Volunteers to take part of the 'Vision & Mission' of Putholi Empowerment Society of India. We appreciate them for their great contribution of their "Time, Knowledge and Experience".
+          </p>
+          <a href="/contact" style={{ display: 'inline-block', padding: '0.6rem 1.5rem', borderRadius: '0.5rem', border: '2px solid white', color: 'white', fontWeight: 600, textDecoration: 'none', transition: 'background-color 0.3s ease, color 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = 'var(--primary-color)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'white'; }}>Volunteer Form</a>
+        </motion.div>
+
+      </motion.div>
     </div>
   );
 }

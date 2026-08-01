@@ -5,10 +5,7 @@ import { motion } from 'framer-motion';
 export default function AboutSection() {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
   };
 
   const itemVariants = {
@@ -17,49 +14,72 @@ export default function AboutSection() {
   };
 
   return (
-    <div className="container" style={{ padding: 'var(--spacing-2xl) 0' }}>
-      <motion.div 
+    <div className="container" style={{ padding: '4rem 0' }}>
+      <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>
-          <h1>About Putholi</h1>
+          <h1 style={{ color: 'var(--primary-color)' }}>About Putholi</h1>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-            A non-profit, non-religious & non-political voluntary organization, registered under Act XXI of Societies Act 1860.
+            "Putholi Empowerment Society of India" (herein after called as PESI) is a non-profit, non-religious & non-political voluntary organization, registered vide Regn No.302/2018 under Act XXI of Societies Act 1860, with Registration Department at Puducherry.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-xl" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-          <motion.div variants={itemVariants} className="glass-panel">
-            <h2 style={{ color: 'var(--accent-color)' }}>VISION</h2>
-            <p style={{ fontSize: '1.2rem', fontWeight: 500, marginBottom: '1rem' }}>
-              Strive for the emancipation of people belonging to SC, ST and OBC & Minorities in India.
+        <div className="grid md:grid-cols-2 gap-lg" style={{ alignItems: 'center' }}>
+          
+          <motion.div variants={itemVariants} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+              PESI is on the move in Tamil Nadu and Puducherry, working for the Socio-Economic Development of down-trodden & Oppressed people and intend to serve to implement its objectives across the country with its registered office at Pondicherry and Administrative office at Chennai.
+            </p>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+              The society has been working on various programmers for Career Guidance, Skill Development & Entrepreneurship Guidelines for Un-employed Youths, in the age group of 18 to 45 years, with main goal of socio-economic development of the downtrodden people.
             </p>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="glass-panel">
-            <h2 style={{ color: 'var(--secondary-color)' }}>MISSION</h2>
-            <ul style={{ paddingLeft: '1.5rem' }}>
-              <li style={{ marginBottom: '0.5rem' }}>Follow the footsteps and direction of Babasaheb Dr. Bhimrao Ramji Ambedkar.</li>
-              <li style={{ marginBottom: '0.5rem' }}>Help them to develop educationally, economically and socially by using available schemes / facilities.</li>
-              <li>Inculcate the idea of "PAYBACK" to the society in the minds of beneficiaries.</li>
-            </ul>
+          <motion.div variants={itemVariants} className="hover-lift" style={{ borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' }}>
+            <img src="/images/buddha.png" alt="Inspiration" style={{ width: '100%', height: '400px', objectFit: 'cover', backgroundColor: '#f1f5f9' }} />
           </motion.div>
         </div>
 
-        <motion.section variants={itemVariants} className="glass-panel" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-          <h2>VALUE</h2>
-          <p style={{ marginBottom: '1rem' }}>
-            While the vision encompasses every member working in the country, Putholi Empowerment Society succinctly knows what they do and whom they serve in their mission. Putholi members respect and treat all their fellow human beings equally irrespective of their race, religion, caste, creed or colour.
-          </p>
-          <p style={{ fontWeight: 600, color: 'var(--primary-color)' }}>
-            For Supporting this 'Vision and Mission of Putholi Empowerment Society' we follow the principle of "PAYBACK TO SOCIETY TO BRING UP".
-          </p>
-        </motion.section>
+        <motion.div variants={itemVariants} className="grid md:grid-cols-3 gap-lg" style={{ marginTop: '4rem' }}>
+          <div className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--primary-color)' }}>
+            <h2 style={{ color: 'var(--primary-color)', marginBottom: '1rem' }}>Vision</h2>
+            <p>Strive for the emancipation of people belonging to SC, ST and OBC & Minorities in India.</p>
+          </div>
 
-        <motion.section variants={itemVariants} style={{ marginBottom: 'var(--spacing-2xl)' }}>
+          <div className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--secondary-color)' }}>
+            <h2 style={{ color: 'var(--secondary-color)', marginBottom: '1rem' }}>Mission</h2>
+            <p>Bring the people belonging to SC, ST and OBC & Minorities together to:</p>
+            <ul style={{ paddingLeft: '1.5rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <li>Make them aware of their position in the society through the media of communication.</li>
+              <li>Follow the footsteps and direction of Babasaheb Dr. Bhimrao Ramji Ambedkar.</li>
+              <li>Help them to develop educationally, economically and socially by using available schemes / facilities from Government / Non-government / any other Organisations / Individual, Company, and in Foreign opportunities and Donations.</li>
+              <li>Inculcate the idea of "PAYBACK" to the society in the minds of beneficiaries of the system and affirmative action by the developed, for the emancipation of their society.</li>
+            </ul>
+          </div>
+
+          <div className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--accent-color)' }}>
+            <h2 style={{ color: 'var(--accent-color)', marginBottom: '1rem' }}>Value</h2>
+            <p>
+              While the vision encompasses every member working in the country, Putholi Empowerment Society succinctly knows what they do and whom they serve in their mission. Putholi members respect and treat all their fellow human beings equally irrespective of their race, religion, caste, creed or colour. 
+            </p>
+            <p style={{ marginTop: '1rem' }}>
+              They carry out their work with dedication and commitment without giving any undue advantage to anybody. Putholi works on milestones to see the success stories of its fraternity.
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div variants={itemVariants} style={{ textAlign: 'center', marginTop: '4rem', padding: '2rem', backgroundColor: 'var(--primary-light)', borderRadius: '1rem', color: 'white' }}>
+          <h2 style={{ marginBottom: '1rem', color: 'white' }}>PAYBACK TO SOCIETY TO BRING UP</h2>
+          <p style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto' }}>
+            Putholi requests its Members & Volunteers to integrate the people together and to contribute their 'Time, Knowledge, Experience and Little Money' to the society.
+          </p>
+        </motion.div>
+
+        <motion.section variants={itemVariants} style={{ marginTop: '4rem', marginBottom: 'var(--spacing-2xl)' }}>
           <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}>Governing Members & The People</h2>
           <div className="grid md:grid-cols-2 gap-md">
             <div className="glass-panel hover-lift">

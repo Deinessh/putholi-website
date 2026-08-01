@@ -68,16 +68,29 @@ export default function RootLayout({
             </div>
 
             {/* Section 3: Address & Contact */}
-            <div>
+            <div style={{ gridColumn: 'span 2' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', color: '#60a5fa' }}>Contact Us</h3>
-              <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: '#cbd5e1' }}>
-                <strong>Regd Office:</strong><br />
-                No 31/13, South Mada Street,<br />
-                Villivakkam, Chennai-49<br />
-                <br />
-                <strong>Phone:</strong> 7200871183, 7200871184<br />
-                <strong>Email:</strong> putholisociety@gmail.com
-              </address>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
+                <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: '#cbd5e1' }}>
+                  <strong style={{ color: 'white' }}>Registered Office:</strong><br />
+                  No.16, 6th Cross Extension, II Floor,<br />
+                  Anna Nagar, Pondicherry-605005<br />
+                  <br />
+                  <strong>Phone:</strong> +91-9819853536, +91-9443036464<br />
+                  <strong>Email:</strong> putholisociety@gmail.com
+                </address>
+
+                <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: '#cbd5e1' }}>
+                  <strong style={{ color: 'white' }}>Administrative Office:</strong><br />
+                  No.112, 2nd Floor, Thiruvalluvar Road,<br />
+                  (Near Thiruvaanmiyur Bus Depot),<br />
+                  Thiruvaanmiyur, Chennai-600041<br />
+                  <br />
+                  <strong>Phone:</strong> +91-9444161164, +91-7358641153<br />
+                  <strong>Email:</strong> putholinews@gmail.com
+                </address>
+              </div>
             </div>
             
           </div>

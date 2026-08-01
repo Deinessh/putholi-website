@@ -42,7 +42,19 @@ export default function Contact() {
           <p style={{ marginBottom: '0.5rem' }}>No.16, 6th Cross Extension, II Floor,</p>
           <p style={{ marginBottom: '0.5rem' }}>Anna Nagar, Pondicherry-605005</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9819853536, +91-9443036464</p>
-          <p style={{ marginBottom: '0.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholisociety@gmail.com">putholisociety@gmail.com</a></p>
+          <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholisociety@gmail.com">putholisociety@gmail.com</a></p>
+          
+          <div style={{ width: '100%', height: '250px', borderRadius: '8px', overflow: 'hidden' }}>
+            <iframe 
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              scrolling="no" 
+              marginHeight={0} 
+              marginWidth={0} 
+              src="https://maps.google.com/maps?q=Anna+Nagar,+Pondicherry-605005&t=&z=13&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+          </div>
         </div>
 
         <div className="glass-panel" style={{ borderTop: '4px solid var(--secondary-color)' }}>
@@ -51,7 +63,19 @@ export default function Contact() {
           <p style={{ marginBottom: '0.5rem' }}>(Near Thiruvaanmiyur Bus Depot),</p>
           <p style={{ marginBottom: '0.5rem' }}>Thiruvaanmiyur, Chennai -600041.</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9444161164, +91-7358641153</p>
-          <p style={{ marginBottom: '0.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholinews@gmail.com">putholinews@gmail.com</a></p>
+          <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholinews@gmail.com">putholinews@gmail.com</a></p>
+          
+          <div style={{ width: '100%', height: '250px', borderRadius: '8px', overflow: 'hidden' }}>
+            <iframe 
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              scrolling="no" 
+              marginHeight={0} 
+              marginWidth={0} 
+              src="https://maps.google.com/maps?q=Thiruvanmiyur+bus+depot,+Chennai+-600041&t=&z=15&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+          </div>
         </div>
       </div>
 

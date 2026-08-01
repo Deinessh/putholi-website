@@ -17,7 +17,7 @@ export default function Home() {
               <Link href="/join" className="nav-btn" style={{ fontSize: '1.1rem', padding: '0.8rem 2rem' }}>
                 Join Us Today
               </Link>
-              <Link href="/about" className="nav-btn" style={{ background: 'white', color: 'var(--primary-color)', border: '2px solid var(--primary-color)' }}>
+              <Link href="/about" className="nav-btn-outline" style={{ fontSize: '1.1rem', padding: '0.8rem 2rem' }}>
                 Learn More
               </Link>
             </div>

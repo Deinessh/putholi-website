@@ -177,14 +177,9 @@ export default function Join() {
 
         <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '2px dashed var(--accent-color)', marginBottom: '2rem' }}>
           <h4 style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--text-primary)' }}>Registration Payment</h4>
-          <div style={{ textAlign: 'center', marginBottom: '1rem', fontSize: '0.95rem' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: 'white', padding: '1rem', borderRadius: '8px', border: '1px solid #e2e8f0', display: 'inline-flex' }}>
-              <div><span style={{ color: 'var(--text-secondary)' }}>Enrollment Fee (One time)</span> <strong style={{ marginLeft: '1rem' }}>Rs. 500/-</strong></div>
-              <div><span style={{ color: 'var(--text-secondary)' }}>Annual Subscription Fee</span> <strong style={{ marginLeft: '1rem' }}>Rs. 1000/-</strong></div>
-              <div><span style={{ color: 'var(--text-secondary)' }}>Lifetime Membership Fee</span> <strong style={{ marginLeft: '1rem' }}>Rs. 10,000/-</strong></div>
-            </div>
-            <p style={{ marginTop: '1rem' }}>Please scan the QR Code or use the Bank Details below.</p>
-          </div>
+          <p style={{ textAlign: 'center', marginBottom: '1rem', fontSize: '0.95rem' }}>
+            Please pay the applicable membership fee (Rs. 1,500/- for Annual or Rs. 10,500/- for Lifetime). Scan the QR Code or use the Bank Details below.
+          </p>
           
           <div className="grid md:grid-cols-2 gap-md" style={{ alignItems: 'center', marginBottom: '1.5rem' }}>
             <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

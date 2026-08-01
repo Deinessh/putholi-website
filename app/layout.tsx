@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Link from 'next/link';
-
+import Navbar from './components/Navbar';
 import HeaderBanner from './components/HeaderBanner';
 
 export const metadata: Metadata = {
@@ -15,27 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ scrollBehavior: 'smooth' }}>
       <body>
         <HeaderBanner />
-        <nav className="navbar">
-          <div className="container flex items-center justify-center">
-            <ul className="nav-links">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/activities">Activities</Link></li>
-              <li><Link href="/program">Program</Link></li>
-              <li><Link href="/membership">Membership</Link></li>
-              <li><Link href="/gallery">Gallery</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-              <li>
-                <Link href="/join" className="nav-btn">
-                  Join Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <Navbar />
         
         <main>
           {children}

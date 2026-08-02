@@ -42,6 +42,18 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { href: '/', id: 'hero', label: 'Home' },
     { href: '/about', id: 'about', label: 'About' },
@@ -132,7 +144,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobileMenuOpen(false)}
-              style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', zIndex: 998, top: '80px' }}
+              style={{ position: 'absolute', inset: 0, top: '100%', height: '100vh', background: 'rgba(0,0,0,0.4)', zIndex: 998 }}
             />
             {/* Sidebar */}
             <motion.div 
@@ -141,9 +153,9 @@ export default function Navbar() {
               exit={{ opacity: 0, x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               style={{ 
-                position: 'fixed', top: '80px', right: 0, bottom: 0, width: '280px', 
+                position: 'absolute', top: '100%', right: 0, height: 'calc(100vh - 80px)', width: '280px', 
                 background: 'rgba(255,255,255,1)',
-                boxShadow: '-5px 0 20px rgba(0,0,0,0.1)', padding: '2rem 1.5rem', 
+                boxShadow: '-5px 10px 20px rgba(0,0,0,0.1)', padding: '2rem 1.5rem', 
                 display: 'flex', flexDirection: 'column', gap: '1.2rem', zIndex: 999,
                 overflowY: 'auto'
               }}
@@ -161,8 +173,8 @@ export default function Navbar() {
                     textDecoration: 'none',
                     borderLeft: isActive ? '4px solid var(--primary-color)' : '4px solid transparent',
                     paddingLeft: '1rem',
-                    paddingTop: '0.2rem',
-                    paddingBottom: '0.2rem',
+                    paddingTop: '0.4rem',
+                    paddingBottom: '0.4rem',
                     display: 'block',
                     backgroundColor: isActive ? 'rgba(30, 64, 175, 0.05)' : 'transparent',
                     borderRadius: '0 0.5rem 0.5rem 0',

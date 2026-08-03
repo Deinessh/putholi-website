@@ -16,7 +16,7 @@ export default function HeaderBanner() {
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
 
           {/* Left Logo - National SC-ST Hub */}
-          <div style={{ width: '60px', height: '60px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.5rem', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+          <div style={{ width: '60px', height: '60px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <img src="/images/scsthub.png" alt="National SC-ST Hub" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
 
@@ -32,7 +32,7 @@ export default function HeaderBanner() {
             </div>
 
             {/* Center Logo Area */}
-            <div style={{ width: '50px', height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', margin: '0 0.5rem', overflow: 'hidden' }}>
+            <div style={{ width: '60px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 0.5rem', overflow: 'hidden' }}>
               <img src="/images/putholi_logo.png" alt="Putholi Society" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
 
@@ -47,7 +47,7 @@ export default function HeaderBanner() {
           </div>
 
           {/* Right Logo - TAHDCO */}
-          <div style={{ width: '60px', height: '60px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.5rem', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+          <div style={{ width: '60px', height: '60px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <img src="/images/tahdco.png" alt="TAHDCO" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
 

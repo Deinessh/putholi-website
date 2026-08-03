@@ -11,43 +11,43 @@ export default function HeaderBanner() {
   return (
     <div style={{ backgroundColor: '#f5a687', padding: '1rem 0.5rem', borderBottom: '1px solid #e2e8f0', width: '100%' }}>
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        
+
         {/* Top Row: Logos and Icons */}
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
-          
+
           {/* Left Logo - National SC-ST Hub */}
-          <div style={{ width: '120px', height: '120px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.5rem', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+          <div style={{ width: '60px', height: '60px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.5rem', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
             <img src="/images/scsthub.png" alt="National SC-ST Hub" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
 
           {/* Center Icons */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
             {/* Phule */}
-            <div style={{ width: '90px', height: '110px' }}>
+            <div style={{ width: '50px', height: '70px' }}>
               <img src={members[0].src} alt={members[0].name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             {/* Ambedkar */}
-            <div style={{ width: '90px', height: '110px' }}>
+            <div style={{ width: '50px', height: '70px' }}>
               <img src={members[1].src} alt={members[1].name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
 
             {/* Center Logo Area */}
-            <div style={{ width: '110px', height: '110px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', margin: '0 0.5rem', overflow: 'hidden' }}>
+            <div style={{ width: '50px', height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', margin: '0 0.5rem', overflow: 'hidden' }}>
               <img src="/images/putholi_logo.png" alt="Putholi Society" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
 
             {/* Buddha */}
-            <div style={{ width: '90px', height: '110px' }}>
+            <div style={{ width: '50px', height: '70px' }}>
               <img src={members[2].src} alt={members[2].name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             {/* Periyar */}
-            <div style={{ width: '90px', height: '110px' }}>
+            <div style={{ width: '50px', height: '70px' }}>
               <img src={members[3].src} alt={members[3].name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
           </div>
 
           {/* Right Logo - TAHDCO */}
-          <div style={{ width: '120px', height: '120px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.5rem', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+          <div style={{ width: '60px', height: '60px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.5rem', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
             <img src="/images/tahdco.png" alt="TAHDCO" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
 
@@ -55,7 +55,7 @@ export default function HeaderBanner() {
 
         {/* Middle Row: Ovals and Text */}
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', width: '100%', marginTop: '1rem' }}>
-          
+
           {/* Left Oval */}
           <div style={{ backgroundColor: '#fde047', borderRadius: '50%', padding: '1rem 2rem', textAlign: 'center', color: '#065f46', fontWeight: 'bold', fontSize: '1.25rem', flex: '0 0 auto', border: '2px solid transparent', boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1)' }}>
             <div style={{ fontSize: '1.75rem', marginBottom: '0.2rem' }}>Pay Back</div>

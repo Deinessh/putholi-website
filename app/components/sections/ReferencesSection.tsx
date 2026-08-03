@@ -267,7 +267,7 @@ export default function ReferencesSection() {
                 Connect with us across our social platforms.
               </p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-                <a href="#" className="nav-btn-outline">Facebook</a>
+                <a href="https://www.facebook.com/share/1BPhNN7skZ/" target="_blank" rel="noreferrer" className="nav-btn-outline">Facebook</a>
                 <a href="https://www.youtube.com/Putholi" target="_blank" rel="noreferrer" className="nav-btn-outline">YouTube</a>
                 <a href="https://twitter.com/putholi_uthira" target="_blank" rel="noreferrer" className="nav-btn-outline">Twitter</a>
               </div>

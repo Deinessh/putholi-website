@@ -59,9 +59,10 @@ export default function Contact() {
 
         <div className="glass-panel" style={{ borderTop: '4px solid var(--secondary-color)' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Administrative Office</h2>
-          <p style={{ marginBottom: '0.5rem' }}>No,112, 2nd Floor, Thiruvalluvar Road,</p>
-          <p style={{ marginBottom: '0.5rem' }}>(Near Thiruvaanmiyur Bus Depot),</p>
-          <p style={{ marginBottom: '0.5rem' }}>Thiruvaanmiyur, Chennai -600041.</p>
+          <p style={{ marginBottom: '0.5rem' }}>(Housed at WAES)</p>
+          <p style={{ marginBottom: '0.5rem' }}>No 43, 3rd Cross St, AG Block,</p>
+          <p style={{ marginBottom: '0.5rem' }}>River View Colony, Anna Nagar, Chennai,</p>
+          <p style={{ marginBottom: '0.5rem' }}>Greater Chennai, Tamil Nadu 600040.</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9444161164, +91-7358641153</p>
           <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholinews@gmail.com">putholinews@gmail.com</a></p>
           
@@ -73,7 +74,7 @@ export default function Contact() {
               scrolling="no" 
               marginHeight={0} 
               marginWidth={0} 
-              src="https://maps.google.com/maps?q=Thiruvanmiyur+bus+depot,+Chennai+-600041&t=&z=15&ie=UTF8&iwloc=&output=embed">
+              src="https://maps.google.com/maps?q=No+43,+3rd+Cross+St,+AG+Block,+River+View+Colony,+Anna+Nagar,+Chennai,+Tamil+Nadu+600040&t=&z=15&ie=UTF8&iwloc=&output=embed">
             </iframe>
           </div>
         </div>

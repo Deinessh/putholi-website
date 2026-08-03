@@ -12,8 +12,9 @@ export default function Join() {
     setSubmitStatus(null);
     
     try {
-      const formData = new FormData(e.currentTarget);
-      const res = await fetch('/api/submit-form', {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      const res = await fetch('http://127.0.0.1:8000/api/membership', {
         method: 'POST',
         body: formData,
       });
@@ -22,8 +23,8 @@ export default function Join() {
       
       if (!res.ok) throw new Error(data.error || 'Failed to submit form');
       
-      setSubmitStatus({ type: 'success', message: 'Form submitted successfully! Check your email for a copy.' });
-      e.currentTarget.reset();
+      setSubmitStatus({ type: 'success', message: 'Submitted Successfully! Check your email for a copy.' });
+      form.reset();
     } catch (err: any) {
       setSubmitStatus({ type: 'error', message: err.message || 'An error occurred. Please try again.' });
     } finally {

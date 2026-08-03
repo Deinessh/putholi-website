@@ -66,9 +66,10 @@ export default function RootLayout({
 
                 <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: '#cbd5e1' }}>
                   <strong style={{ color: 'white' }}>Administrative Office:</strong><br />
-                  No.112, 2nd Floor, Thiruvalluvar Road,<br />
-                  (Near Thiruvaanmiyur Bus Depot),<br />
-                  Thiruvaanmiyur, Chennai-600041<br />
+                  (Housed at WAES)<br />
+                  No 43, 3rd Cross St, AG Block,<br />
+                  River View Colony, Anna Nagar, Chennai,<br />
+                  Greater Chennai, Tamil Nadu 600040<br />
                   <br />
                   <strong>Phone:</strong> +91-9444161164, +91-7358641153<br />
                   <strong>Email:</strong> putholinews@gmail.com
@@ -80,7 +81,7 @@ export default function RootLayout({
             <div>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', color: '#60a5fa' }}>Connect With Us</h3>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <a href="#" className="social-icon fb" title="Facebook">
+                <a href="https://www.facebook.com/share/1BPhNN7skZ/" target="_blank" rel="noreferrer" className="social-icon fb" title="Facebook">
                   <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
                 </a>
                 <a href="https://www.youtube.com/Putholi" target="_blank" rel="noreferrer" className="social-icon yt" title="YouTube">

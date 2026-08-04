@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ReferencesSection from '../components/sections/ReferencesSection';
 
 export const metadata: Metadata = {
-  title: 'References | Putholi Empowerment Society',
+  title: 'News & Reports | Putholi Empowerment Society',
 };
 
 export default function References() {

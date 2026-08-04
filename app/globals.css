@@ -79,6 +79,15 @@ a:hover {
 
 .grid { display: grid; }
 .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+@media (max-width: 768px) {
+  .main-layout-container { flex-direction: column !important; }
+  .header-top-row { justify-content: center !important; }
+  .header-oval { width: 100%; max-width: none !important; border-radius: 20px !important; min-height: 80px !important; }
+  .header-middle-row { flex-direction: column; align-items: center; }
+  .header-address { width: 100%; text-align: center !important; flex: 0 0 auto !important; }
+  .header-center-text { flex: 0 0 auto !important; }
+}
+.header-address-right { text-align: right; }
 @media (min-width: 768px) {
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }

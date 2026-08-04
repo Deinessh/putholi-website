@@ -20,8 +20,8 @@ export default function ReferencesSection() {
   const categories = [
     { id: 'reports', label: 'Annual Reports', icon: <FileText size={20} /> },
     { id: 'newsletter', label: 'Newsletters', icon: <Newspaper size={20} /> },
-    { id: 'project1', label: 'Putholi Project 1', icon: <BookOpen size={20} /> },
-    { id: 'media', label: 'Media & Social', icon: <Share2 size={20} /> },
+    // { id: 'project1', label: 'Putholi Project 1', icon: <BookOpen size={20} /> },
+    // { id: 'media', label: 'Media & Social', icon: <Share2 size={20} /> },
   ];
 
   return (
@@ -61,11 +61,11 @@ export default function ReferencesSection() {
 
         {/* Content Area */}
         <motion.div variants={itemVariants} className="glass-panel" style={{ minHeight: '400px' }}>
-          
+
           {/* NEWSLETTERS CONTENT */}
           {activeTab === 'newsletter' && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} style={{ padding: '2rem' }}>
-              
+
               {/* Newsletter Header */}
               <div style={{ borderBottom: '3px solid var(--primary-color)', paddingBottom: '1rem', marginBottom: '3rem', textAlign: 'center' }}>
                 <h1 style={{ color: 'var(--primary-color)', fontSize: '3rem', marginBottom: '0.5rem', fontFamily: 'serif' }}>PUTHOLI NEWS</h1>
@@ -77,10 +77,10 @@ export default function ReferencesSection() {
 
               {/* Main Content Grid */}
               <div className="grid md:grid-cols-3 gap-xl">
-                
+
                 {/* Left Column */}
                 <div style={{ gridColumn: 'span 2', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-                  
+
                   <section>
                     <h2 style={{ color: 'var(--primary-color)', borderBottom: '2px solid #e2e8f0', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
                       Message from the President
@@ -122,10 +122,10 @@ export default function ReferencesSection() {
                         </p>
                         <h4 style={{ color: 'var(--primary-color)', marginTop: '1.5rem', marginBottom: '0.5rem' }}>To the Public</h4>
                         <p>"I have been struggling for the last 30 years to get you political rights... Now it is your duty to carry on a united struggle for removal of educational, economic and social inequality."</p>
-                        
+
                         <h4 style={{ color: 'var(--primary-color)', marginTop: '1.5rem', marginBottom: '0.5rem' }}>To Leaders</h4>
                         <p>"If somebody calls you to his palace, you are free to go. But do not set your hut on fire... I have no danger from others but I feel endangered from my own people."</p>
-                        
+
                         <h4 style={{ color: 'var(--primary-color)', marginTop: '1.5rem', marginBottom: '0.5rem' }}>To Government Servants</h4>
                         <p>"Our society has progressed a little bit with education... But what I see is a crowd of small and big clerks who are busy in filling their own bellies. Those who are in government service have a duty to donate 1/20th part of their pay for social work."</p>
                       </div>
@@ -134,7 +134,7 @@ export default function ReferencesSection() {
                       </div>
                     </div>
                   </section>
-                  
+
                   <section>
                     <h2 style={{ color: 'var(--primary-color)', borderBottom: '2px solid #e2e8f0', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
                       Activities Update
@@ -179,7 +179,7 @@ export default function ReferencesSection() {
 
                 {/* Right Column (Sidebar) */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                  
+
                   <div style={{ backgroundColor: '#f8fafc', padding: '2rem', borderRadius: '1rem', borderTop: '4px solid var(--secondary-color)' }}>
                     <h3 style={{ color: 'var(--secondary-color)', marginBottom: '1rem' }}>Editor's Corner</h3>
                     <p style={{ fontSize: '0.95rem', lineHeight: '1.6' }}>
@@ -220,13 +220,13 @@ export default function ReferencesSection() {
                       <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Annual Membership:</span> <strong>Rs. 1,000</strong></li>
                       <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Lifetime Membership:</span> <strong>Rs. 10,000</strong></li>
                     </ul>
-                    
+
                     <h3 style={{ color: '#1e3a8a', marginTop: '1.5rem', marginBottom: '1rem' }}>Bank Details</h3>
                     <p style={{ fontSize: '0.9rem', lineHeight: '1.5' }}>
-                      <strong>Bank:</strong> Canara Bank<br/>
-                      <strong>Branch:</strong> Reddiyarpalayam, Puducherry<br/>
-                      <strong>Name:</strong> Putholi Co-op Credit Society<br/>
-                      <strong>A/c No:</strong> 2816101010092<br/>
+                      <strong>Bank:</strong> Canara Bank<br />
+                      <strong>Branch:</strong> Reddiyarpalayam, Puducherry<br />
+                      <strong>Name:</strong> Putholi Co-op Credit Society<br />
+                      <strong>A/c No:</strong> 2816101010092<br />
                       <strong>IFSC:</strong> CNRB0002816
                     </p>
                   </div>

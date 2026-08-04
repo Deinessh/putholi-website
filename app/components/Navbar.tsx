@@ -55,14 +55,12 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { href: '/', id: 'hero', label: 'Home' },
-    { href: '/about', id: 'about', label: 'About' },
-    { href: '/activities', id: 'activities', label: 'Activities' },
     { href: '/program', id: 'program', label: 'Program' },
+    { href: '/activity', id: 'activity', label: 'Activity' },
+    { href: '/achievement', id: 'achievement', label: 'Achievement' },
     { href: '/membership', id: 'membership', label: 'Membership' },
+    { href: '/news-reports', id: 'news-reports', label: 'News & Reports' },
     { href: '/gallery', id: 'gallery', label: 'Gallery' },
-    { href: '/references', id: 'references', label: 'References' },
-    { href: '/contact', id: 'contact', label: 'Contact' },
   ];
 
   return (

@@ -47,6 +47,41 @@ export default function ActivitiesSection() {
           </motion.div>
         </div>
 
+        <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-lg" style={{ marginBottom: '2rem' }}>
+          <div className="glass-panel hover-lift">
+            <h3 style={{ color: 'var(--primary-color)', marginBottom: '1rem' }}>Formation of Co-operative Credit Societies</h3>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1rem' }}>
+              According to the Topographical area, creation of:
+            </p>
+            <ol style={{ paddingLeft: '1.5rem', marginBottom: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '1.05rem' }}>
+              <li>Putholi Micro Small Entrepreneurs Co-op Credit Societies</li>
+              <li>Putholi Agroperneur's Co-op Credit Societies</li>
+            </ol>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1rem', fontWeight: 600 }}>
+              Widely create Awareness, Guidance and Support.
+            </p>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1rem' }}>
+              The experts in the matter of Technical, Administrative and Financial Services etc to be imparted, either the experts visit at Putholi Centres Or the members beneficiaries to have field visits for which Putholi will coordinate.
+            </p>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7' }}>
+              Putholi Co-op Societies will be taken care of Planning, Projects, Procurement, Skill Training and Development, Production, Promotions etc.
+            </p>
+          </div>
+
+          <div className="glass-panel hover-lift">
+            <h3 style={{ color: 'var(--secondary-color)', marginBottom: '1rem' }}>Putholi Project I</h3>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1rem' }}>
+              As per Putholi Project I, we intend to initiate and administer Putholi Multi purpose Centres in District/ Taluk including in Small towns which would function as:
+            </p>
+            <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', fontSize: '1.05rem', listStyleType: 'lower-alpha' }}>
+              <li>Putholi Society's Administrative office</li>
+              <li>Career Guidance, Training institutes for skill development, Entrepreneurship etc.</li>
+              <li>Common Service Centre for various online Regn - social welfare schemes</li>
+              <li>In transit Guest House for the members</li>
+            </ul>
+          </div>
+        </motion.div>
+
         <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-lg">
           <div className="glass-panel hover-lift">
             <h3 style={{ color: 'var(--primary-color)', marginBottom: '1rem' }}>CAREER GUIDANCE CENTRE</h3>

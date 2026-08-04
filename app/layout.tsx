@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Navbar from './components/Navbar';
 import HeaderBanner from './components/HeaderBanner';
 
+import Sidebar from './components/Sidebar';
+
 export const metadata: Metadata = {
   title: 'Putholi Empowerment Society',
   description: 'Socio-economic development for the downtrodden & oppressed people.',
@@ -20,9 +22,12 @@ export default function RootLayout({
         <HeaderBanner />
         <Navbar />
         
-        <main>
-          {children}
-        </main>
+        <div style={{ display: 'flex', minHeight: 'calc(100vh - 200px)', flexDirection: 'row' }} className="main-layout-container">
+          <Sidebar />
+          <main style={{ flexGrow: 1, padding: '2rem' }}>
+            {children}
+          </main>
+        </div>
         
         <footer className="footer" style={{ backgroundColor: '#1e293b', color: '#f8fafc', padding: '4rem 1rem 2rem' }}>
           <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>

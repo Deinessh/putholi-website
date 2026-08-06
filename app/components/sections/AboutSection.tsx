@@ -24,18 +24,18 @@ export default function AboutSection() {
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>
           <h1 style={{ color: 'var(--primary-color)' }}>About Putholi</h1>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-            "Putholi Empowerment Society of India" (herein after called as PESI) is a non-profit, non-religious & non-political voluntary organization, registered vide Regn No.302/2018 under Act XXI of Societies Act 1860, with Registration Department at Puducherry.
+            "Putholi Empowerment Society" (herein after called as PESO) is a non-profit, non-religious & non-political voluntary organization, registered vide Regn No.302/2018 under Act XXI of Societies Act 1860, with Registration Department at Puducherry.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-lg" style={{ alignItems: 'center' }}>
-          
+
           <motion.div variants={itemVariants} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-              PESI is on the move in Tamil Nadu and Puducherry, working for the Socio-Economic Development of down-trodden & Oppressed people and intend to serve to implement its objectives across the country with its registered office at Pondicherry and Administrative office at Chennai.
+              PESO is on the move in Tamil Nadu and Puducherry, working for the Socio-Economic Development of down-trodden & Oppressed people and intend to serve to implement its objectives across the country with its registered office at Pondicherry and Administrative office at Chennai.
             </p>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-              The society has been working on various programmers for Career Guidance, Skill Development & Entrepreneurship Guidelines for Un-employed Youths, in the age group of 18 to 45 years, with main goal of socio-economic development of the downtrodden people.
+              The society has been working on various programmes for Career Guidance, Skill Development & Entrepreneurship Guidelines for Un-employed Youths, in the age group of 18 to 45 years, with main goal of socio-economic development of the downtrodden people.
             </p>
           </motion.div>
 
@@ -45,12 +45,12 @@ export default function AboutSection() {
         </div>
 
         <motion.div variants={itemVariants} className="grid md:grid-cols-3 gap-lg" style={{ marginTop: '4rem' }}>
-          <div className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--primary-color)' }}>
+          <div id="vision" className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--primary-color)' }}>
             <h2 style={{ color: 'var(--primary-color)', marginBottom: '1rem' }}>Vision</h2>
             <p>Strive for the emancipation of people belonging to SC, ST and OBC & Minorities in India.</p>
           </div>
 
-          <div className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--secondary-color)' }}>
+          <div id="mission" className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--secondary-color)' }}>
             <h2 style={{ color: 'var(--secondary-color)', marginBottom: '1rem' }}>Mission</h2>
             <p>Bring the people belonging to SC, ST and OBC & Minorities together to:</p>
             <ul style={{ paddingLeft: '1.5rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -61,10 +61,10 @@ export default function AboutSection() {
             </ul>
           </div>
 
-          <div className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--accent-color)' }}>
+          <div id="value" className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--accent-color)' }}>
             <h2 style={{ color: 'var(--accent-color)', marginBottom: '1rem' }}>Value</h2>
             <p>
-              While the vision encompasses every member working in the country, Putholi Empowerment Society succinctly knows what they do and whom they serve in their mission. Putholi members respect and treat all their fellow human beings equally irrespective of their race, religion, caste, creed or colour. 
+              While the vision encompasses every member working in the country, Putholi Empowerment Society succinctly knows what they do and whom they serve in their mission. Putholi members respect and treat all their fellow human beings equally irrespective of their race, religion, caste, creed or colour.
             </p>
             <p style={{ marginTop: '1rem' }}>
               They carry out their work with dedication and commitment without giving any undue advantage to anybody. Putholi works on milestones to see the success stories of its fraternity.
@@ -91,8 +91,12 @@ export default function AboutSection() {
               <p style={{ color: 'var(--text-secondary)' }}>Entrepreneur, Secretary (TN & Puducherry)</p>
             </div>
             <div className="glass-panel hover-lift">
-              <h3 style={{ fontSize: '1.1rem' }}>Er. S. Gunasekaran, B.E.</h3>
-              <p style={{ color: 'var(--text-secondary)' }}>Chief Engineer, Marine; Apex Treasurer</p>
+              <h3 style={{ fontSize: '1.1rem' }}>Mr.M.S.Karthikeyan</h3>
+              <p style={{ color: 'var(--text-secondary)' }}>Treasurer</p>
+            </div>
+            <div className="glass-panel hover-lift">
+              <h3 style={{ fontSize: '1.1rem' }}>Mr.V.Gangatharan, M.Tech</h3>
+              <p style={{ color: 'var(--text-secondary)' }}>Administrative Secretary</p>
             </div>
             <div className="glass-panel hover-lift">
               <h3 style={{ fontSize: '1.1rem' }}>Er. P. Nagarajan, B.E., MBA</h3>

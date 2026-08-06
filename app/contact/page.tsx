@@ -35,7 +35,7 @@ export default function Contact() {
   return (
     <div className="container" style={{ padding: 'var(--spacing-2xl) 0' }}>
       <h1 style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>Contact Us</h1>
-      
+
       <div className="grid md:grid-cols-2 gap-lg" style={{ marginBottom: 'var(--spacing-2xl)' }}>
         <div className="glass-panel" style={{ borderTop: '4px solid var(--primary-color)' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Registered Office</h2>
@@ -43,15 +43,15 @@ export default function Contact() {
           <p style={{ marginBottom: '0.5rem' }}>Anna Nagar, Pondicherry-605005</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9819853536, +91-9443036464</p>
           <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholisociety@gmail.com">putholisociety@gmail.com</a></p>
-          
+
           <div style={{ width: '100%', height: '250px', borderRadius: '8px', overflow: 'hidden' }}>
-            <iframe 
-              width="100%" 
-              height="100%" 
-              frameBorder="0" 
-              scrolling="no" 
-              marginHeight={0} 
-              marginWidth={0} 
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight={0}
+              marginWidth={0}
               src="https://maps.google.com/maps?q=Anna+Nagar,+Pondicherry-605005&t=&z=13&ie=UTF8&iwloc=&output=embed">
             </iframe>
           </div>
@@ -59,21 +59,22 @@ export default function Contact() {
 
         <div className="glass-panel" style={{ borderTop: '4px solid var(--secondary-color)' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Administrative Office</h2>
-          <p style={{ marginBottom: '0.5rem' }}>(Housed at WAES)</p>
+
           <p style={{ marginBottom: '0.5rem' }}>No 43, 3rd Cross St, AG Block,</p>
           <p style={{ marginBottom: '0.5rem' }}>River View Colony, Anna Nagar, Chennai,</p>
-          <p style={{ marginBottom: '0.5rem' }}>Greater Chennai, Tamil Nadu 600040.</p>
+          <p style={{ marginBottom: '0.5rem' }}>Tamil Nadu-600040.</p>
+          <p style={{ marginBottom: '0.5rem' }}>(Housed at WAES)</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9444161164, +91-7358641153</p>
           <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholinews@gmail.com">putholinews@gmail.com</a></p>
-          
+
           <div style={{ width: '100%', height: '250px', borderRadius: '8px', overflow: 'hidden' }}>
-            <iframe 
-              width="100%" 
-              height="100%" 
-              frameBorder="0" 
-              scrolling="no" 
-              marginHeight={0} 
-              marginWidth={0} 
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight={0}
+              marginWidth={0}
               src="https://maps.google.com/maps?q=No+43,+3rd+Cross+St,+AG+Block,+River+View+Colony,+Anna+Nagar,+Chennai,+Tamil+Nadu+600040&t=&z=15&ie=UTF8&iwloc=&output=embed">
             </iframe>
           </div>
@@ -82,7 +83,7 @@ export default function Contact() {
 
       <section className="glass-panel">
         <h2 style={{ textAlign: 'center', marginBottom: '1.5rem', color: 'var(--primary-color)' }}>District / Other State Co-ordinators</h2>
-        
+
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
             <thead>

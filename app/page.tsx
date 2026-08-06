@@ -17,9 +17,6 @@ export default function Home() {
               Putholi Empowerment Society is dedicated to the socio-economic development of SC, ST, OBC, and Minorities in Tamil Nadu and Puducherry.
             </p>
             <div className="flex" style={{ gap: '1rem' }}>
-              <Link href="/join" className="nav-btn" style={{ fontSize: '1.1rem', padding: '0.8rem 2rem' }}>
-                Join Us Today
-              </Link>
               <Link href="#about" className="nav-btn-outline" style={{ fontSize: '1.1rem', padding: '0.8rem 2rem' }}>
                 Learn More
               </Link>
@@ -34,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* Main Objectives Grid (Now part of the hero transition) */}
-      <section style={{ padding: '4rem 0', backgroundColor: 'var(--background-color)' }}>
+      <section id="objective" style={{ padding: '4rem 0', backgroundColor: 'var(--background-color)' }}>
         <div className="container">
           <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>Our Primary Objectives</h2>
           <div className="grid md:grid-cols-3 gap-lg">

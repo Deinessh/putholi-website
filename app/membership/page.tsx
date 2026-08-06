@@ -16,7 +16,7 @@ export default function Membership() {
   return (
     <div className="container" style={{ padding: 'var(--spacing-2xl) 0' }}>
       <motion.div initial="hidden" animate="visible" variants={containerVariants}>
-        
+
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h1 style={{ color: 'var(--primary-color)' }}>Membership & Contribution</h1>
         </motion.div>
@@ -29,7 +29,7 @@ export default function Membership() {
             PUTHOLI (new light) put-forth the requisition to the people (who got the benefits by education, job opportunities & other form) to payback their contribution for society by their <strong>"Time, Knowledge, Experience & Little Money"</strong>.
           </p>
           <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-            As a little contribution by money, they are welcome to join as a 'Member of Putholi Empowerment Society of India' by paying the following Membership Fee:
+            As a little contribution by money, they are welcome to join as a 'Member of Putholi Empowerment Society' by paying the following Membership Fee:
           </p>
         </motion.div>
 
@@ -77,9 +77,9 @@ export default function Membership() {
         <motion.div variants={itemVariants} style={{ textAlign: 'center', backgroundColor: 'var(--primary-color)', color: 'white', padding: '3rem', borderRadius: '1rem' }}>
           <h2 style={{ marginBottom: '1rem', color: 'white' }}>WORK WITH US (AS VOLUNTEERS)</h2>
           <p style={{ fontSize: '1.15rem', maxWidth: '800px', margin: '0 auto 2rem', lineHeight: '1.8' }}>
-            We are pleasure to welcome the aspirants who want to work with as Volunteers to take part of the 'Vision & Mission' of Putholi Empowerment Society of India. We appreciate them for their great contribution of their "Time, Knowledge and Experience".
+            We have pleasure to welcome the aspirants who want to work with as Volunteers to take part of the 'Vision & Mission' of Putholi Empowerment Society. We appreciate them for their great contribution of their "Time, Knowledge and Experience".
           </p>
-          <a href="/contact" style={{ display: 'inline-block', padding: '0.6rem 1.5rem', borderRadius: '0.5rem', border: '2px solid white', color: 'white', fontWeight: 600, textDecoration: 'none', transition: 'background-color 0.3s ease, color 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = 'var(--primary-color)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'white'; }}>Volunteer Form</a>
+          <span style={{ display: 'inline-block', padding: '0.6rem 1.5rem', borderRadius: '0.5rem', border: '2px solid white', color: 'white', fontWeight: 600, cursor: 'default', transition: 'background-color 0.3s ease, color 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = 'var(--primary-color)'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'white'; }}>Volunteer Form</span>
         </motion.div>
 
       </motion.div>

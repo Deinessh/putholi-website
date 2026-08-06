@@ -55,16 +55,53 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
+    { href: '/', id: 'hero', label: 'Home', dropdown: [
+      { href: '/about', label: 'About Putholi' },
+      { href: '/vision', label: 'Vision' },
+      { href: '/mission', label: 'Mission' },
+      { href: '/objective', label: 'Objective' },
+      { href: '/value', label: 'Value' }
+    ] },
     { href: '/program', id: 'program', label: 'Program' },
     { href: '/activity', id: 'activity', label: 'Activity' },
     { href: '/achievement', id: 'achievement', label: 'Achievement' },
     { href: '/membership', id: 'membership', label: 'Membership' },
     { href: '/news-reports', id: 'news-reports', label: 'News & Reports' },
     { href: '/gallery', id: 'gallery', label: 'Gallery' },
+    { href: '/contact', id: 'contact', label: 'Contact' },
   ];
 
   return (
     <nav className="navbar" style={{ position: 'sticky', top: 0, zIndex: 1000, background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(10px)', minHeight: '80px', display: 'flex', alignItems: 'center' }}>
+      <style>{`
+        .nav-item-with-dropdown:hover .dropdown-menu {
+          display: block;
+        }
+        .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: white;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+          border-radius: 0.5rem;
+          padding: 0.5rem 0;
+          min-width: 180px;
+          list-style: none;
+          z-index: 1000;
+        }
+        .dropdown-menu li a {
+          display: block;
+          padding: 0.5rem 1rem;
+          color: var(--text-primary);
+          text-decoration: none;
+          transition: background-color 0.2s;
+        }
+        .dropdown-menu li a:hover {
+          background-color: var(--primary-light);
+          color: white;
+        }
+      `}</style>
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%' }}>
         
         {/* Mobile Join Us Button - positioned absolutely to the left */}
@@ -84,10 +121,20 @@ export default function Navbar() {
               (pathname !== "/" && pathname === `/${link.id}`);
               
             return (
-              <li key={link.label} style={{ position: 'relative' }}>
-                <Link href={link.href} className={isActive ? 'active' : ''}>
+              <li key={link.label} style={{ position: 'relative' }} className={link.dropdown ? 'nav-item-with-dropdown' : ''}>
+                <Link href={link.href} className={isActive ? 'active' : ''} style={{ display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
                   {link.label}
+                  {link.dropdown && <span style={{ fontSize: '0.6rem' }}>▼</span>}
                 </Link>
+                {link.dropdown && (
+                  <ul className="dropdown-menu">
+                    {link.dropdown.map(dropItem => (
+                      <li key={dropItem.label}>
+                        <Link href={dropItem.href}>{dropItem.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 {isActive && (
                   <motion.div
                     layoutId="underline"

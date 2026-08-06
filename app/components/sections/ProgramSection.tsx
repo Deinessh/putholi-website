@@ -24,7 +24,7 @@ export default function ProgramSection() {
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h1 style={{ color: 'var(--primary-color)' }}>Our Programs</h1>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-            'Putholi Empowerment Society of India' has been giving the following Training programmes to un-employed youths to empower their economic status through jobs & entrepreneurship based on their interests & skill-sets.
+            'Putholi Empowerment Society' has been giving the following Training programmes to un-employed youths to empower their economic status through jobs & entrepreneurship based on their interests & skill-sets.
           </p>
         </motion.div>
 
@@ -32,10 +32,10 @@ export default function ProgramSection() {
           <motion.div variants={itemVariants} className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--primary-color)' }}>
             <h2 style={{ color: 'var(--primary-color)', marginBottom: '1rem' }}>1. Career Development Program</h2>
             <p style={{ fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1rem' }}>
-              The PESI gives Job-Training Programmes to various recruitment of Central & State Government like TNPSC, SSC, RRB, BSRB, RPF, CRPF, BSF & Insurance etc.
+              The PESO gives Job-Training Programmes to various recruitment of Central & State Government like TNPSC, SSC, RRB, BSRB, RPF, CRPF, BSF & Insurance etc.
             </p>
             <p style={{ fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1rem' }}>
-              These trainings cover the subjects of ‘Mathematics, English, General Knowledge, Reasoning, Model/Mock Tests & Revisions’ by well-experienced teachers & trainers. 
+              These trainings cover the subjects of ‘Mathematics, English, General Knowledge, Reasoning, Model/Mock Tests & Revisions’ by well-experienced teachers & trainers.
             </p>
             <p style={{ fontSize: '1.05rem', lineHeight: '1.7', fontWeight: 500, backgroundColor: '#f1f5f9', padding: '1rem', borderRadius: '0.5rem' }}>
               The candidates in the age group of 18 to 35 years, with qualifications of ‘+2, Diploma, Bachelor Degree & PG Degree holders’ are getting benefitted by these job-trainings.
@@ -45,7 +45,7 @@ export default function ProgramSection() {
           <motion.div variants={itemVariants} className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--secondary-color)' }}>
             <h2 style={{ color: 'var(--secondary-color)', marginBottom: '1rem' }}>2. Entrepreneurship Program</h2>
             <p style={{ fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1rem' }}>
-              Various type of Entrepreneurial /Economic Development Training Programmes scheduled to be given by PESI, to the candidates with qualifications of ‘8th Std to 12th Std, Diploma, Degree to PG Degree”, in the age group of 18 to 45 years.
+              Various type of Entrepreneurial /Economic Development Training Programmes scheduled to be given by PESO, to the candidates with qualifications of ‘8th Std to 12th Std, Diploma, Degree to PG Degree”, in the age group of 18 to 45 years.
             </p>
             <p style={{ fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '1rem' }}>
               In these trainings, Candidates can get Awareness on the abundant opportunities, transforming the unskilled to Skilled, as Self-employed, Trainings on various Central and State Government Loan schemes, its Subsidy & Margin Money Contribution & Special Trainings on preparing the Project Reports, Marketing Management, Financial Management & on Company Registrations.

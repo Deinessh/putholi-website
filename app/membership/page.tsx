@@ -23,7 +23,7 @@ export default function Membership() {
 
         <motion.div variants={itemVariants} className="glass-panel" style={{ marginBottom: '3rem' }}>
           <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-            "Putholi Empowerment Society" welcomes the like-minded people with generosity for taking care on solving the problems of social and economic inequalities in the society. It also welcomes the people who have been benefitted by the Reservation Policy which was brought by Babhasahep Dr.B.R.Ambedkar, to take the responsibility of his principal requisition of "PAYBACK TO SOCIETY", on thankfulness to his efforts for constituted the reservation-opportunity in Indian Constitution.
+            "Putholi Empowerment Society" welcomes the like-minded people with generosity for taking care on solving the problems of social and economic inequalities in the society. It also welcomes the people who have been benefitted by the Reservation Policy which was brought by Babasaheb Dr.B.R.Ambedkar, to take the responsibility of his principal requisition of "PAYBACK TO SOCIETY", on thankfulness to his efforts for constituted the reservation-opportunity in Indian Constitution.
           </p>
           <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
             PUTHOLI (new light) put-forth the requisition to the people (who got the benefits by education, job opportunities & other form) to payback their contribution for society by their <strong>"Time, Knowledge, Experience & Little Money"</strong>.

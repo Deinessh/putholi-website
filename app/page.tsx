@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import AboutSection from './components/sections/AboutSection';
-import ActivitiesSection from './components/sections/ActivitiesSection';
-import ProgramSection from './components/sections/ProgramSection';
+
 
 export default function Home() {
   return (
@@ -56,15 +55,7 @@ export default function Home() {
         <AboutSection />
       </section>
 
-      {/* Activities Section */}
-      <section id="activities" style={{ paddingTop: '2rem', backgroundColor: '#f8fafc' }}>
-        <ActivitiesSection />
-      </section>
 
-      {/* Programs Section */}
-      <section id="program" style={{ paddingTop: '2rem' }}>
-        <ProgramSection />
-      </section>
       
       {/* Official Structure Summary */}
       <section className="container" style={{ paddingBottom: '4rem' }}>

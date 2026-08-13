@@ -17,7 +17,7 @@ type GalleryItem = {
 async function getGalleryItems(): Promise<GalleryItem[]> {
   try {
     // Revalidate every 60 seconds or use no-store for real-time
-    const res = await fetch('http://127.0.0.1:8000/api/gallery', { next: { revalidate: 0 } });
+    const res = await fetch('https://admin.putholi.org/api/gallery', { next: { revalidate: 0 } });
     if (!res.ok) {
       return [];
     }

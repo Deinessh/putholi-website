@@ -14,7 +14,7 @@ export default function Join() {
     try {
       const form = e.currentTarget;
       const formData = new FormData(form);
-      const res = await fetch('http://127.0.0.1:8000/api/membership', {
+      const res = await fetch('https://admin.putholi.org/api/membership', {
         method: 'POST',
         body: formData,
       });

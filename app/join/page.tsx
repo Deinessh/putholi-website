@@ -346,6 +346,37 @@ export default function Join() {
             </div>
         </div>
 
+        {/* === REGISTRATION PAYMENT === */}
+        <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '2px dashed var(--accent-color)', marginBottom: '2rem' }}>
+          <h4 style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--text-primary)' }}>Registration Payment</h4>
+          <p style={{ textAlign: 'center', marginBottom: '1rem', fontSize: '0.95rem' }}>
+            Please pay the applicable membership fee (Rs. 1,500/- for Annual or Rs. 10,500/- for Lifetime). Scan the QR Code or use the Bank Details below.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-md" style={{ alignItems: 'center', marginBottom: '1.5rem' }}>
+            <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ padding: '1rem', background: 'white', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', display: 'inline-block' }}>
+                <h4 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 'bold' }}>SCAN & PAY</h4>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=307013131534790@cnrb&pn=Putholi%20Society" alt="UPI QR Code" style={{ width: '200px', height: '200px', marginBottom: '1rem' }} />
+                <p style={{ margin: '0 0 0.5rem 0', fontWeight: 'bold', fontSize: '1.1rem' }}>UPI ID: 307013131534790@cnrb</p>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+                  <span style={{ fontSize: '1.2rem', fontWeight: '900', fontStyle: 'italic', color: '#737373' }}>BHIM</span>
+                  <span style={{ fontSize: '1.2rem', fontWeight: '900', fontStyle: 'italic', color: '#16a34a' }}>UPI</span>
+                </div>
+              </div>
+            </div>
+            
+            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', fontSize: '1rem', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+              <h4 style={{ marginBottom: '1rem', borderBottom: '2px solid var(--glass-border)', paddingBottom: '0.5rem', color: 'var(--primary-color)' }}>Bank Details</h4>
+              <p style={{ marginBottom: '0.5rem' }}><strong>Bank:</strong> CANARA BANK</p>
+              <p style={{ marginBottom: '0.5rem' }}><strong>Branch:</strong> Thiruvanmiyur, Chennai-600041</p>
+              <p style={{ marginBottom: '0.5rem' }}><strong>Account Name:</strong> Putholi Empowerment Society</p>
+              <p style={{ marginBottom: '0.5rem' }}><strong>Account Number:</strong> 110021534790</p>
+              <p style={{ marginBottom: 0 }}><strong>IFSC:</strong> CNRB0002649</p>
+            </div>
+          </div>
+        </div>
+
         {/* === ATTACHMENTS === */}
         <h3 style={{ marginTop: '2rem', marginBottom: '1rem', color: 'var(--primary-color)' }}>Attachments</h3>
         

@@ -80,27 +80,6 @@ export default function Join() {
         </button>
       </div>
 
-      {submitStatus && (
-        <div style={{
-          padding: '1rem',
-          marginBottom: '2rem',
-          borderRadius: 'var(--radius-md)',
-          backgroundColor: submitStatus.type === 'success' ? '#dcfce7' : '#fee2e2',
-          color: submitStatus.type === 'success' ? '#166534' : '#991b1b',
-          border: `1px solid ${submitStatus.type === 'success' ? '#4ade80' : '#f87171'}`,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
-          <span>{submitStatus.message}</span>
-          {submitStatus.type === 'success' && (
-            <Link href="/dashboard" className="btn" style={{ backgroundColor: '#15803d', color: 'white', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                Go to Dashboard
-            </Link>
-          )}
-        </div>
-      )}
-
       <form onSubmit={handleSubmit} className="glass-panel" style={{ background: 'rgba(255,255,255,0.95)' }}>
         
         {/* === BENEFICIARY TAB === */}
@@ -380,9 +359,37 @@ export default function Join() {
             <input type="file" name="paymentReceipt" accept="image/*,.pdf" className="form-control" />
         </div>
 
-        <button type="submit" disabled={isSubmitting} className="btn btn-primary" style={{ width: '100%', fontSize: '1.1rem', padding: '1rem' }}>
-          {isSubmitting ? 'Submitting...' : 'Submit Registration Form'}
-        </button>
+        {submitStatus && submitStatus.type === 'success' ? (
+            <div style={{
+              padding: '1.5rem',
+              marginTop: '1rem',
+              borderRadius: 'var(--radius-md)',
+              backgroundColor: '#dcfce7',
+              color: '#166534',
+              border: '2px solid #4ade80',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+              alignItems: 'center'
+            }}>
+              <h3 style={{ margin: 0, fontSize: '1.2rem' }}>{submitStatus.message}</h3>
+              <Link href="/dashboard" className="btn btn-primary" style={{ backgroundColor: '#15803d', border: 'none', padding: '0.75rem 2rem', fontSize: '1.1rem' }}>
+                  Go to Dashboard
+              </Link>
+            </div>
+        ) : (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {submitStatus && submitStatus.type === 'error' && (
+                    <div style={{ padding: '1rem', borderRadius: 'var(--radius-md)', backgroundColor: '#fee2e2', color: '#991b1b', border: '1px solid #f87171' }}>
+                        {submitStatus.message}
+                    </div>
+                )}
+                <button type="submit" disabled={isSubmitting} className="btn btn-primary" style={{ width: '100%', fontSize: '1.1rem', padding: '1rem' }}>
+                  {isSubmitting ? 'Submitting...' : 'Submit Registration Form'}
+                </button>
+            </div>
+        )}
       </form>
 
     </div>

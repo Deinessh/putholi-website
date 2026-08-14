@@ -108,10 +108,9 @@ export default function Navbar() {
       `}</style>
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%' }}>
         
-        {/* Mobile menu logo or nothing can go here */}
+        {/* Mobile menu padding or left element if needed */}
         {mounted && (
-          <div className="mobile-menu-btn" style={{ position: 'absolute', left: '1rem', display: 'flex', gap: '0.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-            PES
+          <div className="mobile-menu-btn" style={{ position: 'absolute', left: '1rem', display: 'flex', gap: '0.5rem' }}>
           </div>
         )}
 
@@ -155,21 +154,14 @@ export default function Navbar() {
             );
           })}
           {!user ? (
-            <li style={{ display: 'flex', gap: '0.5rem', marginLeft: '1rem' }}>
-              {!showAuthButtons ? (
-                <button onClick={() => setShowAuthButtons(true)} className="nav-btn" style={{ background: 'var(--primary-color)', color: 'white', padding: '0.5rem 1.5rem', fontSize: '1rem', borderRadius: '0.5rem' }}>
-                  Join Us
-                </button>
-              ) : (
-                <div style={{ display: 'flex', gap: '0.5rem', animation: 'fadeIn 0.3s' }}>
-                  <Link href="/login" className="nav-btn" style={{ background: 'transparent', color: 'var(--primary-color)', border: '1px solid var(--primary-color)' }}>
-                    Login
-                  </Link>
-                  <Link href="/register" className="nav-btn">
-                    Sign Up
-                  </Link>
-                </div>
-              )}
+            <li style={{ position: 'relative', display: 'flex', alignItems: 'center', marginLeft: '1rem' }} className="nav-item-with-dropdown">
+              <div className="nav-btn" style={{ background: 'var(--primary-color)', color: 'white', padding: '0.5rem 1.5rem', fontSize: '1rem', borderRadius: '0.5rem', cursor: 'pointer' }}>
+                Join Us ▼
+              </div>
+              <ul className="dropdown-menu">
+                <li><Link href="/login">Login</Link></li>
+                <li><Link href="/register">Sign Up</Link></li>
+              </ul>
             </li>
           ) : (
             <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginLeft: '1rem' }}>
@@ -259,11 +251,10 @@ export default function Navbar() {
 
               {!user ? (
                 <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {!showAuthButtons ? (
-                    <button onClick={() => setShowAuthButtons(true)} className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
-                      Join Us
-                    </button>
-                  ) : (
+                  <button onClick={() => setShowAuthButtons(!showAuthButtons)} className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'flex', justifyContent: 'center', gap: '0.5rem' }}>
+                    Join Us {showAuthButtons ? '▲' : '▼'}
+                  </button>
+                  {showAuthButtons && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', animation: 'fadeIn 0.3s' }}>
                       <Link href="/login" className="btn btn-outline" onClick={() => setIsMobileMenuOpen(false)} style={{ textAlign: 'center', width: '100%' }}>
                         Login

@@ -138,6 +138,26 @@ export default function Dashboard() {
                                 * Your application is currently under review by the administration. You will be able to download your ID Card once approved.
                             </p>
                         )}
+                        
+                        {/* Visible Form Details */}
+                        <div style={{ marginTop: '2.5rem', borderTop: '2px solid #e2e8f0', paddingTop: '1.5rem' }}>
+                            <h3 style={{ marginBottom: '1.5rem', color: 'var(--primary-color)' }}>Submitted Application Details</h3>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {Object.entries(membership.data).map(([key, value]) => {
+                                    if(key === 'membership_id' || key === 'membership_type') return null;
+                                    return (
+                                        <div key={key} style={{ backgroundColor: '#f8fafc', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #e2e8f0' }}>
+                                            <strong style={{ display: 'block', color: '#64748b', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                                                {key.replace(/_/g, ' ')}
+                                            </strong>
+                                            <span style={{ color: '#0f172a', fontWeight: '500' }}>
+                                                {String(value) || 'N/A'}
+                                            </span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>

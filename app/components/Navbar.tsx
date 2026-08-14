@@ -13,6 +13,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [showAuthButtons, setShowAuthButtons] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -42,6 +43,7 @@ export default function Navbar() {
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setShowAuthButtons(false);
   }, [pathname]);
 
   // Lock body scroll when mobile menu is open
@@ -106,18 +108,10 @@ export default function Navbar() {
       `}</style>
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%' }}>
         
-        {/* Mobile Auth Buttons - positioned absolutely to the left */}
+        {/* Mobile menu logo or nothing can go here */}
         {mounted && (
-          <div className="mobile-menu-btn" style={{ position: 'absolute', left: '1rem', display: 'flex', gap: '0.5rem' }}>
-            {!user ? (
-              <Link href="/login" className="nav-btn" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>
-                Login
-              </Link>
-            ) : (
-              <Link href="/dashboard" className="nav-btn" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem', background: '#0284c7' }}>
-                Dashboard
-              </Link>
-            )}
+          <div className="mobile-menu-btn" style={{ position: 'absolute', left: '1rem', display: 'flex', gap: '0.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
+            PES
           </div>
         )}
 
@@ -161,21 +155,29 @@ export default function Navbar() {
             );
           })}
           {!user ? (
-            <li style={{ display: 'flex', gap: '0.5rem' }}>
-              <Link href="/login" className="nav-btn" style={{ background: 'transparent', color: 'var(--primary-color)', border: '1px solid var(--primary-color)' }}>
-                Login
-              </Link>
-              <Link href="/register" className="nav-btn">
-                Sign Up
-              </Link>
+            <li style={{ display: 'flex', gap: '0.5rem', marginLeft: '1rem' }}>
+              {!showAuthButtons ? (
+                <button onClick={() => setShowAuthButtons(true)} className="nav-btn" style={{ background: 'var(--primary-color)', color: 'white', padding: '0.5rem 1.5rem', fontSize: '1rem', borderRadius: '0.5rem' }}>
+                  Join Us
+                </button>
+              ) : (
+                <div style={{ display: 'flex', gap: '0.5rem', animation: 'fadeIn 0.3s' }}>
+                  <Link href="/login" className="nav-btn" style={{ background: 'transparent', color: 'var(--primary-color)', border: '1px solid var(--primary-color)' }}>
+                    Login
+                  </Link>
+                  <Link href="/register" className="nav-btn">
+                    Sign Up
+                  </Link>
+                </div>
+              )}
             </li>
           ) : (
-            <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginLeft: '1rem' }}>
               <Link href="/dashboard" className="nav-btn" style={{ background: '#0284c7' }}>
                 Dashboard
               </Link>
-              <Link href="/join" className="nav-btn">
-                Join Us
+              <Link href="/join" className="nav-btn" style={{ background: 'var(--primary-color)' }}>
+                Application Form
               </Link>
               <button onClick={() => logout()} className="nav-btn" style={{ background: '#ef4444' }}>
                 Logout
@@ -254,6 +256,37 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+
+              {!user ? (
+                <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {!showAuthButtons ? (
+                    <button onClick={() => setShowAuthButtons(true)} className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
+                      Join Us
+                    </button>
+                  ) : (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', animation: 'fadeIn 0.3s' }}>
+                      <Link href="/login" className="btn btn-outline" onClick={() => setIsMobileMenuOpen(false)} style={{ textAlign: 'center', width: '100%' }}>
+                        Login
+                      </Link>
+                      <Link href="/register" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ textAlign: 'center', width: '100%' }}>
+                        Sign Up
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <Link href="/dashboard" className="btn" style={{ background: '#0284c7', color: 'white', textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
+                    Dashboard
+                  </Link>
+                  <Link href="/join" className="btn btn-primary" style={{ textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
+                    Application Form
+                  </Link>
+                  <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="btn" style={{ background: '#ef4444', color: 'white' }}>
+                    Logout
+                  </button>
+                </div>
+              )}
             </motion.div>
           </>
         )}

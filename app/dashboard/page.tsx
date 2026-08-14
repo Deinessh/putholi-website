@@ -167,12 +167,12 @@ export default function Dashboard() {
                 <div id="id-card-content" style={{ display: 'none', width: '54mm', height: '86mm', backgroundColor: 'white', position: 'relative', overflow: 'hidden', fontFamily: 'Arial, sans-serif' }}>
                     {/* Watermark Logo */}
                     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.1, zIndex: 0 }}>
-                        <img src="https://admin.putholi.org/images/putholi_logo.png" alt="Watermark" style={{ width: '40mm', height: '40mm', objectFit: 'contain' }} crossOrigin="anonymous" />
+                        <img src="/images/putholi_logo.png" alt="Watermark" style={{ width: '40mm', height: '40mm', objectFit: 'contain' }} crossOrigin="anonymous" />
                     </div>
 
                     {/* Header */}
                     <div style={{ backgroundColor: '#1e3a8a', padding: '2mm', textAlign: 'center', color: 'white', position: 'relative', zIndex: 1, borderBottom: '2px solid #facc15' }}>
-                        <img src="https://admin.putholi.org/images/putholi_logo.png" alt="Logo" style={{ height: '8mm', marginBottom: '1mm', filter: 'brightness(0) invert(1)' }} crossOrigin="anonymous" />
+                        <img src="/images/putholi_logo.png" alt="Logo" style={{ height: '8mm', marginBottom: '1mm', filter: 'brightness(0) invert(1)' }} crossOrigin="anonymous" />
                         <h4 style={{ margin: 0, fontSize: '6px', fontWeight: 'bold' }}>PUTHOLI EMPOWERMENT SOCIETY</h4>
                         <p style={{ margin: 0, fontSize: '4px' }}>Reg No: XXXX/XXXX</p>
                     </div>

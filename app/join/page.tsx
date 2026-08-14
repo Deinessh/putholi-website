@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../../lib/AuthContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -80,6 +80,7 @@ export default function Join() {
         </button>
       </div>
 
+      {submitStatus && (
         <div style={{
           padding: '1rem',
           marginBottom: '2rem',
@@ -384,7 +385,6 @@ export default function Join() {
         </button>
       </form>
 
-      </form>
     </div>
   );
 }

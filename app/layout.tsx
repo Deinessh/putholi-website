@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Navbar from './components/Navbar';
 import HeaderBanner from './components/HeaderBanner';
 
-import Sidebar from './components/Sidebar';
+import { AuthProvider } from '../lib/AuthContext';
 
 export const metadata: Metadata = {
   title: 'Putholi Empowerment Society',
@@ -19,14 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ scrollBehavior: 'smooth' }}>
       <body>
-        <HeaderBanner />
-        <Navbar />
+        <AuthProvider>
+          <HeaderBanner />
+          <Navbar />
 
-        <div style={{ display: 'flex', minHeight: 'calc(100vh - 200px)', flexDirection: 'column' }} className="main-layout-container">
-          <main style={{ flexGrow: 1 }}>
-            {children}
-          </main>
-        </div>
+          <div style={{ display: 'flex', minHeight: 'calc(100vh - 200px)', flexDirection: 'column' }} className="main-layout-container">
+            <main style={{ flexGrow: 1 }}>
+              {children}
+            </main>
+          </div>
 
         <footer className="footer" style={{ backgroundColor: '#1e293b', color: '#f8fafc', padding: '4rem 1rem 2rem' }}>
           <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
@@ -97,6 +98,7 @@ export default function RootLayout({
             <p>&copy; {new Date().getFullYear()} Putholi Empowerment Society. All rights reserved.</p>
           </div>
         </footer>
+        </AuthProvider>
       </body>
     </html>
   );

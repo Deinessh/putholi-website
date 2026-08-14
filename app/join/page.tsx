@@ -1,15 +1,23 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useAuth } from '../../lib/AuthContext';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Join() {
   const [activeTab, setActiveTab] = useState<'beneficiary' | 'needy'>('beneficiary');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
-  
-  // Data State for PDF formatting
-  const [submittedData, setSubmittedData] = useState<any>(null);
-  const [membershipId, setMembershipId] = useState<string | null>(null);
+  const { user, token, isLoading } = useAuth();
+  const router = useRouter();
+
+  // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isLoading, router]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,6 +33,9 @@ export default function Join() {
       
       const res = await fetch('https://admin.putholi.org/api/membership', {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
         body: formData,
       });
       
@@ -32,23 +43,7 @@ export default function Join() {
       
       if (!res.ok) throw new Error(data.error || 'Failed to submit form');
       
-      setSubmitStatus({ type: 'success', message: 'Submitted Successfully! Your ID is ' + data.membership_id });
-      setMembershipId(data.membership_id);
-      
-      // Store form data for PDF
-      const formJson: any = {};
-      formData.forEach((value, key) => {
-        if(!formJson[key]) {
-            formJson[key] = value;
-        } else {
-            // handle multiple checkboxes
-            if(!Array.isArray(formJson[key])) {
-                formJson[key] = [formJson[key]];
-            }
-            formJson[key].push(value);
-        }
-      });
-      setSubmittedData(formJson);
+      setSubmitStatus({ type: 'success', message: 'Submitted Successfully! Your ID is ' + data.membership_id + '. You can check your approval status in the Dashboard.' });
       
       form.reset();
       
@@ -59,24 +54,8 @@ export default function Join() {
     }
   };
 
-  const handleDownloadPdf = () => {
-    const element = document.getElementById('pdf-content');
-    if (element) {
-        // Temporarily display the PDF content div
-        element.style.display = 'block';
-        import('html2pdf.js').then((html2pdf) => {
-            html2pdf.default().set({
-                margin: 10,
-                filename: `Putholi_Membership_${membershipId}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            }).from(element).save().then(() => {
-                element.style.display = 'none'; // hide it back
-            });
-        });
-    }
-  };
+  if (isLoading) return <div style={{ textAlign: 'center', padding: '4rem' }}>Loading...</div>;
+  if (!user) return null; // will redirect
 
   return (
     <div className="container" style={{ padding: 'var(--spacing-2xl) 0', maxWidth: '900px' }}>
@@ -101,7 +80,6 @@ export default function Join() {
         </button>
       </div>
 
-      {submitStatus && (
         <div style={{
           padding: '1rem',
           marginBottom: '2rem',
@@ -115,9 +93,9 @@ export default function Join() {
         }}>
           <span>{submitStatus.message}</span>
           {submitStatus.type === 'success' && (
-            <button onClick={handleDownloadPdf} className="btn" style={{ backgroundColor: '#15803d', color: 'white', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                Download PDF
-            </button>
+            <Link href="/dashboard" className="btn" style={{ backgroundColor: '#15803d', color: 'white', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
+                Go to Dashboard
+            </Link>
           )}
         </div>
       )}
@@ -305,6 +283,11 @@ export default function Join() {
           <textarea name="address" rows={3} required className="form-control"></textarea>
         </div>
 
+        <div className="form-group">
+          <label className="form-label">Govt ID No. *</label>
+          <input type="text" name="govt_id_no" required className="form-control" placeholder="e.g. Aadhar / PAN / Voter ID" />
+        </div>
+
         <h3 style={{ marginTop: '2rem', marginBottom: '1rem', color: 'var(--primary-color)' }}>Location & ID Generation</h3>
         <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Select the relevant region codes to auto-generate your 12-digit Member ID.</p>
         
@@ -401,106 +384,7 @@ export default function Join() {
         </button>
       </form>
 
-      {/* HIDDEN PDF CONTENT - GENERATED UPON SUBMISSION */}
-      <div id="pdf-content" style={{ display: 'none', padding: '40px', fontFamily: 'Arial, sans-serif' }}>
-        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-            <h1 style={{ color: '#1e3a8a', margin: '0' }}>PUTHOLI EMPOWERMENT SOCIETY</h1>
-            <h2 style={{ color: '#475569', margin: '10px 0', fontSize: '1.2rem' }}>Membership Application Form</h2>
-        </div>
-        
-        {submittedData && (
-            <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px', padding: '10px', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0' }}>
-                    <div><strong>Member ID:</strong> <span style={{ fontFamily: 'monospace', fontSize: '1.1rem', color: '#b91c1c' }}>{membershipId}</span></div>
-                    <div><strong>Type:</strong> <span style={{ textTransform: 'capitalize' }}>{submittedData.membership_type}</span></div>
-                </div>
-
-                <h3 style={{ borderBottom: '2px solid #1e3a8a', paddingBottom: '5px' }}>Personal Details</h3>
-                <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px' }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0', width: '30%' }}><strong>Name</strong></td>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{submittedData.name}</td>
-                        </tr>
-                        <tr>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}><strong>Father/Husband Name</strong></td>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{submittedData.fatherHusbandName}</td>
-                        </tr>
-                        <tr>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}><strong>Date of Birth / Age</strong></td>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{submittedData.dob} / {submittedData.age}</td>
-                        </tr>
-                        <tr>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}><strong>Contact & Email</strong></td>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{submittedData.phone} | {submittedData.email}</td>
-                        </tr>
-                        <tr>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}><strong>Address</strong></td>
-                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{submittedData.address}</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                {submittedData.membership_type === 'beneficiary' && (
-                    <>
-                        <h3 style={{ borderBottom: '2px solid #1e3a8a', paddingBottom: '5px' }}>Beneficiary Details</h3>
-                        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                            <tbody>
-                                {['education', 'employment', 'position_held', 'working_status', 'as_dealership', 'as_subsidy_beneficiary', 'as_service_sector', 'as_public_procurement', 'as_scholarship_awardee', 'as_quota_contractor', 'as_any_other_means'].map((key) => {
-                                    if(submittedData[key]) {
-                                        return (
-                                            <tr key={key}>
-                                                <td style={{ padding: '8px', border: '1px solid #e2e8f0', width: '40%', textTransform: 'capitalize' }}><strong>{key.replace(/_/g, ' ')}</strong></td>
-                                                <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{submittedData[key]}</td>
-                                            </tr>
-                                        )
-                                    }
-                                    return null;
-                                })}
-                            </tbody>
-                        </table>
-                    </>
-                )}
-
-                {submittedData.membership_type === 'needy' && (
-                    <>
-                        <h3 style={{ borderBottom: '2px solid #1e3a8a', paddingBottom: '5px' }}>Needy / Skill Details</h3>
-                        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                            <tbody>
-                                {['education_qualified', 'academic_technical', 'degree', 'diploma', 'experience', 'interest_self_employment', 'interest_employee', 'priority_ambition', 'goal_to_achieve'].map((key) => {
-                                    if(submittedData[key]) {
-                                        return (
-                                            <tr key={key}>
-                                                <td style={{ padding: '8px', border: '1px solid #e2e8f0', width: '40%', textTransform: 'capitalize' }}><strong>{key.replace(/_/g, ' ')}</strong></td>
-                                                <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{submittedData[key]}</td>
-                                            </tr>
-                                        )
-                                    }
-                                    return null;
-                                })}
-                                {submittedData['business_activities[]'] && (
-                                    <tr>
-                                        <td style={{ padding: '8px', border: '1px solid #e2e8f0', width: '40%' }}><strong>Business Activities</strong></td>
-                                        <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>
-                                            {Array.isArray(submittedData['business_activities[]']) 
-                                                ? submittedData['business_activities[]'].join(', ') 
-                                                : submittedData['business_activities[]']}
-                                        </td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </>
-                )}
-                
-                <div style={{ marginTop: '50px', display: 'flex', justifyContent: 'space-between' }}>
-                    <div style={{ borderTop: '1px solid #000', paddingTop: '10px', width: '200px', textAlign: 'center' }}>Applicant Signature</div>
-                    <div style={{ borderTop: '1px solid #000', paddingTop: '10px', width: '200px', textAlign: 'center' }}>Authorized Signatory</div>
-                </div>
-            </div>
-        )}
-      </div>
-
+      </form>
     </div>
   );
 }

@@ -5,9 +5,11 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useAuth } from '../../lib/AuthContext';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { user, logout } = useAuth();
   const [activeSection, setActiveSection] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -104,12 +106,18 @@ export default function Navbar() {
       `}</style>
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%' }}>
         
-        {/* Mobile Join Us Button - positioned absolutely to the left */}
+        {/* Mobile Auth Buttons - positioned absolutely to the left */}
         {mounted && (
-          <div className="mobile-menu-btn" style={{ position: 'absolute', left: '1rem' }}>
-            <Link href="/join" className="nav-btn" style={{ padding: '0.5rem 1rem', fontSize: '0.95rem' }}>
-              Join Us
-            </Link>
+          <div className="mobile-menu-btn" style={{ position: 'absolute', left: '1rem', display: 'flex', gap: '0.5rem' }}>
+            {!user ? (
+              <Link href="/login" className="nav-btn" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>
+                Login
+              </Link>
+            ) : (
+              <Link href="/dashboard" className="nav-btn" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem', background: '#0284c7' }}>
+                Dashboard
+              </Link>
+            )}
           </div>
         )}
 
@@ -152,11 +160,28 @@ export default function Navbar() {
               </li>
             );
           })}
-          <li>
-            <Link href="/join" className="nav-btn">
-              Join Us
-            </Link>
-          </li>
+          {!user ? (
+            <li style={{ display: 'flex', gap: '0.5rem' }}>
+              <Link href="/login" className="nav-btn" style={{ background: 'transparent', color: 'var(--primary-color)', border: '1px solid var(--primary-color)' }}>
+                Login
+              </Link>
+              <Link href="/register" className="nav-btn">
+                Sign Up
+              </Link>
+            </li>
+          ) : (
+            <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <Link href="/dashboard" className="nav-btn" style={{ background: '#0284c7' }}>
+                Dashboard
+              </Link>
+              <Link href="/join" className="nav-btn">
+                Join Us
+              </Link>
+              <button onClick={() => logout()} className="nav-btn" style={{ background: '#ef4444' }}>
+                Logout
+              </button>
+            </li>
+          )}
         </ul>
 
         {/* Mobile Menu Button - positioned absolutely to the right */}

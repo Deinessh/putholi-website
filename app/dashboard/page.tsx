@@ -10,6 +10,7 @@ export default function Dashboard() {
     const [membership, setMembership] = useState<any>(null);
     const [loadingMembership, setLoadingMembership] = useState(true);
     const [pdfLoading, setPdfLoading] = useState(false);
+    const [formPdfLoading, setFormPdfLoading] = useState(false);
 
     useEffect(() => {
         if (!isLoading && !user) {
@@ -52,6 +53,24 @@ export default function Dashboard() {
             element.style.display = 'none';
         }
         setPdfLoading(false);
+    };
+
+    const handleDownloadForm = async () => {
+        setFormPdfLoading(true);
+        const element = document.getElementById('form-content');
+        if (element) {
+            element.style.display = 'block';
+            const html2pdf = (await import('html2pdf.js')).default;
+            await html2pdf().set({
+                margin: 10,
+                filename: `Putholi_Application_${membership.data.membership_id}.pdf`,
+                image: { type: 'jpeg', quality: 1.0 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            }).from(element).save();
+            element.style.display = 'none';
+        }
+        setFormPdfLoading(false);
     };
 
     if (isLoading || loadingMembership) return <div style={{ textAlign: 'center', padding: '4rem' }}>Loading Dashboard...</div>;
@@ -100,20 +119,23 @@ export default function Dashboard() {
                             </div>
                         </div>
 
-                        {membership.status === 'approved' && (
-                            <div style={{ display: 'flex', gap: '1rem', borderTop: '1px solid #e2e8f0', paddingTop: '1.5rem' }}>
-                                <button onClick={handleDownloadIDCard} disabled={pdfLoading} className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                                    {pdfLoading ? 'Generating...' : 'Download ID Card'}
-                                </button>
-                                <button onClick={() => alert('Download Form coming soon')} className="btn" style={{ backgroundColor: '#f1f5f9', color: '#334155' }}>
-                                    Download Form
-                                </button>
-                            </div>
-                        )}
+                        <div style={{ display: 'flex', gap: '1rem', borderTop: '1px solid #e2e8f0', paddingTop: '1.5rem', flexWrap: 'wrap' }}>
+                            <button 
+                                onClick={handleDownloadIDCard} 
+                                disabled={membership.status !== 'approved' || pdfLoading} 
+                                className="btn btn-primary" 
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: membership.status !== 'approved' ? 0.5 : 1, cursor: membership.status !== 'approved' ? 'not-allowed' : 'pointer' }}
+                            >
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                                {pdfLoading ? 'Generating...' : 'Download ID Card'}
+                            </button>
+                            <button onClick={handleDownloadForm} disabled={formPdfLoading} className="btn" style={{ backgroundColor: '#f1f5f9', color: '#334155', border: '1px solid #cbd5e1' }}>
+                                {formPdfLoading ? 'Generating...' : 'Download Application Form'}
+                            </button>
+                        </div>
                         {membership.status === 'pending' && (
-                            <p style={{ color: '#64748b', fontSize: '0.9rem', fontStyle: 'italic', borderTop: '1px solid #e2e8f0', paddingTop: '1rem' }}>
-                                Your application is currently under review by the administration. You will be able to download your ID Card once approved.
+                            <p style={{ color: '#64748b', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '1rem' }}>
+                                * Your application is currently under review by the administration. You will be able to download your ID Card once approved.
                             </p>
                         )}
                     </div>
@@ -182,6 +204,34 @@ export default function Dashboard() {
                     <div style={{ backgroundColor: '#f8fafc', padding: '1.5mm', textAlign: 'center', position: 'absolute', bottom: 0, width: '100%', borderTop: '1px solid #e2e8f0', zIndex: 1 }}>
                         <span style={{ fontSize: '5px', color: '#64748b', textTransform: 'uppercase', marginRight: '2mm' }}>Member ID:</span>
                         <strong style={{ fontSize: '9px', color: '#b91c1c', fontFamily: 'monospace' }}>{membership.data.membership_id}</strong>
+                    </div>
+                </div>
+            )}
+
+            {/* HIDDEN FORM TEMPLATE (A4 Size) */}
+            {membership && (
+                <div id="form-content" style={{ display: 'none', backgroundColor: 'white', padding: '20px', fontFamily: 'Arial, sans-serif', color: '#0f172a' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '20px', borderBottom: '2px solid #1e3a8a', paddingBottom: '10px' }}>
+                        <h1 style={{ color: '#1e3a8a', margin: '0 0 10px 0' }}>PUTHOLI EMPOWERMENT SOCIETY</h1>
+                        <h3 style={{ margin: 0 }}>Membership Application Form</h3>
+                    </div>
+                    
+                    <div style={{ marginBottom: '20px' }}>
+                        <h4 style={{ borderBottom: '1px solid #cbd5e1', paddingBottom: '5px', color: '#1e3a8a' }}>Applicant Details</h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                            <tbody>
+                                {Object.entries(membership.data).map(([key, value]) => (
+                                    <tr key={key}>
+                                        <td style={{ padding: '8px', borderBottom: '1px solid #f1f5f9', fontWeight: 'bold', width: '40%', textTransform: 'capitalize' }}>
+                                            {key.replace(/_/g, ' ')}
+                                        </td>
+                                        <td style={{ padding: '8px', borderBottom: '1px solid #f1f5f9' }}>
+                                            {String(value)}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             )}

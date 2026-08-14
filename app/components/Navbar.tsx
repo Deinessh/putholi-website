@@ -153,29 +153,29 @@ export default function Navbar() {
               </li>
             );
           })}
-          {!user ? (
-            <li style={{ position: 'relative', display: 'flex', alignItems: 'center', marginLeft: '1rem' }} className="nav-item-with-dropdown">
-              <div className="nav-btn" style={{ background: 'var(--primary-color)', color: 'white', padding: '0.5rem 1.5rem', fontSize: '1rem', borderRadius: '0.5rem', cursor: 'pointer' }}>
-                Join Us ▼
-              </div>
-              <ul className="dropdown-menu">
-                <li><Link href="/login">Login</Link></li>
-                <li><Link href="/register">Sign Up</Link></li>
-              </ul>
-            </li>
-          ) : (
-            <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginLeft: '1rem' }}>
-              <Link href="/dashboard" className="nav-btn" style={{ background: '#0284c7' }}>
-                Dashboard
-              </Link>
-              <Link href="/join" className="nav-btn" style={{ background: 'var(--primary-color)' }}>
-                Application Form
-              </Link>
-              <button onClick={() => logout()} className="nav-btn" style={{ background: '#ef4444' }}>
-                Logout
-              </button>
-            </li>
-          )}
+          <li style={{ position: 'relative', display: 'flex', alignItems: 'center', marginLeft: '1rem' }} className="nav-item-with-dropdown">
+            <div className="nav-btn" style={{ background: 'var(--primary-color)', color: 'white', padding: '0.5rem 1.5rem', fontSize: '1rem', borderRadius: '0.5rem', cursor: 'pointer' }}>
+              Join Us ▼
+            </div>
+            <ul className="dropdown-menu">
+              {!user ? (
+                <>
+                  <li><Link href="/login">Login</Link></li>
+                  <li><Link href="/register">Sign Up</Link></li>
+                </>
+              ) : (
+                <>
+                  <li><Link href="/dashboard">Dashboard</Link></li>
+                  <li><Link href="/join">Application Form</Link></li>
+                  <li>
+                    <button onClick={() => logout()} style={{ background: 'none', border: 'none', padding: '0.5rem 1rem', width: '100%', textAlign: 'left', cursor: 'pointer', color: '#ef4444', fontSize: '1rem' }}>
+                      Logout
+                    </button>
+                  </li>
+                </>
+              )}
+            </ul>
+          </li>
         </ul>
 
         {/* Mobile Menu Button - positioned absolutely to the right */}
@@ -249,35 +249,37 @@ export default function Navbar() {
                 );
               })}
 
-              {!user ? (
-                <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <button onClick={() => setShowAuthButtons(!showAuthButtons)} className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'flex', justifyContent: 'center', gap: '0.5rem' }}>
-                    Join Us {showAuthButtons ? '▲' : '▼'}
-                  </button>
-                  {showAuthButtons && (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', animation: 'fadeIn 0.3s' }}>
-                      <Link href="/login" className="btn btn-outline" onClick={() => setIsMobileMenuOpen(false)} style={{ textAlign: 'center', width: '100%' }}>
-                        Login
-                      </Link>
-                      <Link href="/register" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ textAlign: 'center', width: '100%' }}>
-                        Sign Up
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <Link href="/dashboard" className="btn" style={{ background: '#0284c7', color: 'white', textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
-                    Dashboard
-                  </Link>
-                  <Link href="/join" className="btn btn-primary" style={{ textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
-                    Application Form
-                  </Link>
-                  <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="btn" style={{ background: '#ef4444', color: 'white' }}>
-                    Logout
-                  </button>
-                </div>
-              )}
+              <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <button onClick={() => setShowAuthButtons(!showAuthButtons)} className="btn btn-primary" style={{ width: '100%', textAlign: 'center', display: 'flex', justifyContent: 'center', gap: '0.5rem' }}>
+                  Join Us {showAuthButtons ? '▲' : '▼'}
+                </button>
+                {showAuthButtons && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', animation: 'fadeIn 0.3s' }}>
+                    {!user ? (
+                      <>
+                        <Link href="/login" className="btn btn-outline" onClick={() => setIsMobileMenuOpen(false)} style={{ textAlign: 'center', width: '100%' }}>
+                          Login
+                        </Link>
+                        <Link href="/register" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ textAlign: 'center', width: '100%' }}>
+                          Sign Up
+                        </Link>
+                      </>
+                    ) : (
+                      <>
+                        <Link href="/dashboard" className="btn" style={{ background: '#0284c7', color: 'white', textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
+                          Dashboard
+                        </Link>
+                        <Link href="/join" className="btn btn-primary" style={{ textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
+                          Application Form
+                        </Link>
+                        <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="btn" style={{ background: '#ef4444', color: 'white' }}>
+                          Logout
+                        </button>
+                      </>
+                    )}
+                  </div>
+                )}
+              </div>
             </motion.div>
           </>
         )}

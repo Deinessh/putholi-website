@@ -3,12 +3,15 @@
 import { useState } from 'react';
 import { useAuth } from '../../lib/AuthContext';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
     const { login } = useAuth();
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -29,6 +32,10 @@ export default function Login() {
             }
 
             login(data.access_token, data.user);
+            setSuccess('Login success! Redirecting to Dashboard...');
+            setTimeout(() => {
+                router.push('/dashboard');
+            }, 1500);
         } catch (err: any) {
             setError(err.message);
         } finally {
@@ -42,6 +49,7 @@ export default function Login() {
                 <h1 style={{ textAlign: 'center', marginBottom: '1.5rem', color: 'var(--primary-color)' }}>Login</h1>
                 
                 {error && <div style={{ background: '#fee2e2', color: '#991b1b', padding: '1rem', borderRadius: '0.5rem', marginBottom: '1rem', border: '1px solid #f87171' }}>{error}</div>}
+                {success && <div style={{ background: '#dcfce7', color: '#166534', padding: '1rem', borderRadius: '0.5rem', marginBottom: '1rem', border: '1px solid #4ade80' }}>{success}</div>}
 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">

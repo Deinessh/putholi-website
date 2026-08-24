@@ -15,10 +15,18 @@ export default function HeaderBanner() {
         {/* 3-Column Layout for Desktop */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
 
-          {/* Left Column: Quote (Serif font, Italic, Dash-Quote Style, Center Aligned) */}
+          {/* Left Column: Quote with Decorative Large Quotation Marks */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-            <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.15rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4' }}>
-              &ldquo; PAY BACK<br /> your society<br /> by Dr.B.R.Ambedkar &rdquo;
+            <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '240px' }}>
+              {/* Top Left Quote Mark */}
+              <span style={{ position: 'absolute', top: '-12px', left: '-5px', fontSize: '3rem', lineHeight: '1', color: '#1e3a8a', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+              
+              <div style={{ color: '#1e3a8a', fontWeight: '800', fontSize: '1.1rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 2px rgba(255,255,255,0.4)' }}>
+                PAY BACK<br />to your society
+              </div>
+              
+              {/* Bottom Right Quote Mark */}
+              <span style={{ position: 'absolute', bottom: '-20px', right: '-5px', fontSize: '3rem', lineHeight: '1', color: '#1e3a8a', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 
@@ -58,10 +66,18 @@ export default function HeaderBanner() {
             <p style={{ color: '#7f1d1d', fontSize: '0.85rem', margin: '0 0 0.2rem 0', fontWeight: '600' }}>Reg No.302/2018 Act xxi of Societies Act 1860</p>
           </div>
 
-          {/* Right Column: Quote (Serif font, Italic, Dash-Quote Style, Center Aligned) */}
+          {/* Right Column: Quote with Decorative Large Quotation Marks */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-            <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.05rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', maxWidth: '280px' }}>
-              &ldquo; Contribute your Time,<br />knowledge, experience<br />and a little money &rdquo;
+            <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '280px' }}>
+              {/* Top Left Quote Mark */}
+              <span style={{ position: 'absolute', top: '-12px', left: '-5px', fontSize: '3rem', lineHeight: '1', color: '#1e3a8a', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+
+              <div style={{ color: '#1e3a8a', fontWeight: '800', fontSize: '1.02rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 2px rgba(255,255,255,0.4)' }}>
+                Contribute your<br />Time, knowledge, experience<br />and a little money
+              </div>
+
+              {/* Bottom Right Quote Mark */}
+              <span style={{ position: 'absolute', bottom: '-20px', right: '-5px', fontSize: '3rem', lineHeight: '1', color: '#1e3a8a', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 

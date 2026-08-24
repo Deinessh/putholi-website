@@ -1,37 +1,59 @@
-import type { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Putholi Empowerment Society',
-};
+import { useState, useEffect } from 'react';
 
-const coordinators = [
-  { no: 1, dist: 'Bengaluru', contact: '8884801647' },
-  { no: 2, dist: 'Chennai', contact: '9486605277, 9444049488, 7358641153' },
-  { no: 3, dist: 'Chidambaram', contact: '9442424405' },
-  { no: 4, dist: 'Coimbatore', contact: '9443019607, 9489917540' },
-  { no: 5, dist: 'Neyveli, Cuddalore', contact: '9489107657' },
-  { no: 6, dist: 'Dharmapuri', contact: '9952979144' },
-  { no: 7, dist: 'Karaikal', contact: '9443399575' },
-  { no: 8, dist: 'Theni', contact: '9750485422' },
-  { no: 9, dist: 'Myiladuthurai', contact: '9994224937' },
-  { no: 10, dist: 'Nagaercoil', contact: '9443102921' },
-  { no: 11, dist: 'Nagai & Tiruvarur', contact: '9942466663' },
-  { no: 12, dist: 'Perambalur', contact: '9790201100' },
-  { no: 13, dist: 'Puducherry', contact: '9994633528' },
-  { no: 14, dist: 'Salem', contact: '9790262261' },
-  { no: 15, dist: 'Tanjore', contact: '9361287845' },
-  { no: 16, dist: 'Tirunelveli', contact: '9442233205' },
-  { no: 17, dist: 'Trichirapalli', contact: '9080460620' },
-  { no: 18, dist: 'Tuticorin', contact: '9842158129' },
-  { no: 19, dist: 'Vellore', contact: '9486172320' },
-  { no: 20, dist: 'Villupuram', contact: '8608312145' },
-  { no: 21, dist: 'Yanam', contact: '9490709427' },
-  { no: 22, dist: 'Kadapppa, AP', contact: '9866723784' },
-  { no: 23, dist: 'Bhopal, MP', contact: '9340457993' },
-  { no: 24, dist: 'New Delhi', contact: '9810843043' },
+interface CoordinatorItem {
+  id?: number;
+  sl_no: number;
+  dist_state: string;
+  coordinator_name?: string;
+  contact_no: string;
+  district_address?: string;
+}
+
+const initialCoordinators: CoordinatorItem[] = [
+  { sl_no: 1, dist_state: 'Bengaluru', coordinator_name: '-', contact_no: '8884801647', district_address: '-' },
+  { sl_no: 2, dist_state: 'Chennai', coordinator_name: '-', contact_no: '9486605277, 9444049488, 7358641153', district_address: '-' },
+  { sl_no: 3, dist_state: 'Chidambaram', coordinator_name: '-', contact_no: '9442424405', district_address: '-' },
+  { sl_no: 4, dist_state: 'Coimbatore', coordinator_name: '-', contact_no: '9443019607, 9489917540', district_address: '-' },
+  { sl_no: 5, dist_state: 'Neyveli, Cuddalore', coordinator_name: '-', contact_no: '9489107657', district_address: '-' },
+  { sl_no: 6, dist_state: 'Dharmapuri', coordinator_name: '-', contact_no: '9952979144', district_address: '-' },
+  { sl_no: 7, dist_state: 'Karaikal', coordinator_name: '-', contact_no: '9443399575', district_address: '-' },
+  { sl_no: 8, dist_state: 'Theni', coordinator_name: '-', contact_no: '9750485422', district_address: '-' },
+  { sl_no: 9, dist_state: 'Myiladuthurai', coordinator_name: '-', contact_no: '9994224937', district_address: '-' },
+  { sl_no: 10, dist_state: 'Nagaercoil', coordinator_name: '-', contact_no: '9443102921', district_address: '-' },
+  { sl_no: 11, dist_state: 'Nagai & Tiruvarur', coordinator_name: '-', contact_no: '9942466663', district_address: '-' },
+  { sl_no: 12, dist_state: 'Perambalur', coordinator_name: '-', contact_no: '9790201100', district_address: '-' },
+  { sl_no: 13, dist_state: 'Puducherry', coordinator_name: '-', contact_no: '9994633528', district_address: '-' },
+  { sl_no: 14, dist_state: 'Salem', coordinator_name: '-', contact_no: '9790262261', district_address: '-' },
+  { sl_no: 15, dist_state: 'Tanjore', coordinator_name: '-', contact_no: '9361287845', district_address: '-' },
+  { sl_no: 16, dist_state: 'Tirunelveli', coordinator_name: '-', contact_no: '9442233205', district_address: '-' },
+  { sl_no: 17, dist_state: 'Trichirapalli', coordinator_name: '-', contact_no: '9080460620', district_address: '-' },
+  { sl_no: 18, dist_state: 'Tuticorin', coordinator_name: '-', contact_no: '9842158129', district_address: '-' },
+  { sl_no: 19, dist_state: 'Vellore', coordinator_name: '-', contact_no: '9486172320', district_address: '-' },
+  { sl_no: 20, dist_state: 'Villupuram', coordinator_name: '-', contact_no: '8608312145', district_address: '-' },
+  { sl_no: 21, dist_state: 'Yanam', coordinator_name: '-', contact_no: '9490709427', district_address: '-' },
+  { sl_no: 22, dist_state: 'Kadapppa, AP', coordinator_name: '-', contact_no: '9866723784', district_address: '-' },
+  { sl_no: 23, dist_state: 'Bhopal, MP', coordinator_name: '-', contact_no: '9340457993', district_address: '-' },
+  { sl_no: 24, dist_state: 'New Delhi', coordinator_name: '-', contact_no: '9810843043', district_address: '-' },
 ];
 
 export default function Contact() {
+  const [coordinatorsList, setCoordinatorsList] = useState(initialCoordinators);
+
+  useEffect(() => {
+    fetch('https://admin.putholi.org/api/coordinators')
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === 'success' && Array.isArray(data.coordinators) && data.coordinators.length > 0) {
+          setCoordinatorsList(data.coordinators);
+        }
+      })
+      .catch(err => {
+        console.warn('Using initial coordinator data fallback:', err);
+      });
+  }, []);
+
   return (
     <div className="container" style={{ padding: 'var(--spacing-2xl) 0' }}>
       <h1 style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>Contact Us</h1>
@@ -40,7 +62,7 @@ export default function Contact() {
         <div className="glass-panel" style={{ borderTop: '4px solid var(--primary-color)' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Registered Office</h2>
           <p style={{ marginBottom: '0.5rem' }}>No.16, II Floor, 6th Cross Extension,</p>
-          <p style={{ marginBottom: '0.5rem' }}>Anna Nagar, Puducherry-605005</p>
+          <p style={{ marginBottom: '0.5rem' }}>Anna Nagar, Pondicherry-605005</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9819853536, +91-9443036464</p>
           <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholisociety@gmail.com">putholisociety@gmail.com</a></p>
 
@@ -90,15 +112,19 @@ export default function Contact() {
               <tr style={{ backgroundColor: 'rgba(91, 33, 182, 0.1)' }}>
                 <th style={{ padding: '1rem', borderBottom: '2px solid var(--primary-color)' }}>Sl.No</th>
                 <th style={{ padding: '1rem', borderBottom: '2px solid var(--primary-color)' }}>Dist / State</th>
+                <th style={{ padding: '1rem', borderBottom: '2px solid var(--primary-color)' }}>Name of the Co-ordinator</th>
                 <th style={{ padding: '1rem', borderBottom: '2px solid var(--primary-color)' }}>Contact No</th>
+                <th style={{ padding: '1rem', borderBottom: '2px solid var(--primary-color)' }}>District Address</th>
               </tr>
             </thead>
             <tbody>
-              {coordinators.map((c) => (
-                <tr key={c.no} style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                  <td style={{ padding: '0.75rem 1rem' }}>{c.no}</td>
-                  <td style={{ padding: '0.75rem 1rem', fontWeight: 500 }}>{c.dist}</td>
-                  <td style={{ padding: '0.75rem 1rem' }}>{c.contact}</td>
+              {coordinatorsList.map((c, index) => (
+                <tr key={c.id || index} style={{ borderBottom: '1px solid var(--glass-border)' }}>
+                  <td style={{ padding: '0.75rem 1rem' }}>{c.sl_no || (index + 1)}</td>
+                  <td style={{ padding: '0.75rem 1rem', fontWeight: 600, color: '#1e3a8a' }}>{c.dist_state}</td>
+                  <td style={{ padding: '0.75rem 1rem', fontWeight: 500 }}>{c.coordinator_name || '-'}</td>
+                  <td style={{ padding: '0.75rem 1rem' }}>{c.contact_no}</td>
+                  <td style={{ padding: '0.75rem 1rem' }}>{c.district_address || '-'}</td>
                 </tr>
               ))}
             </tbody>

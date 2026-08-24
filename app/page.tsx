@@ -32,7 +32,7 @@ export default function Home() {
       <section id="leadership-structure" style={{ padding: '4rem 0', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
           <h2 style={{ textAlign: 'center', marginBottom: '2.5rem', color: 'var(--primary-color)', fontSize: '2.2rem' }}>
-            Our Leaderships, Governing Members & The People
+            OUR LEADERSHIP
           </h2>
 
           <div className="grid md:grid-cols-2 gap-xl" style={{ alignItems: 'stretch' }}>
@@ -42,9 +42,6 @@ export default function Home() {
               <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem', marginBottom: '1.2rem', borderBottom: '2px solid #e2e8f0', paddingBottom: '0.5rem' }}>
                 Governing Members & Leaderships
               </h3>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-primary)', marginBottom: '1.5rem' }}>
-                Our Society is guided by experienced office bearers, state coordinators, and committed members dedicated to carrying out socio-economic empowerment across Tamil Nadu & Puducherry.
-              </p>
               <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', fontSize: '1rem', color: 'var(--text-primary)' }}>
                 <li style={{ padding: '0.6rem 0.8rem', backgroundColor: '#eff6ff', borderRadius: '0.5rem', borderLeft: '4px solid var(--primary-color)' }}>
                   <strong>Founder-President:</strong> K. Uthirapathi, IRS (Rtd.)

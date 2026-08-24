@@ -40,7 +40,7 @@ export default function Contact() {
         <div className="glass-panel" style={{ borderTop: '4px solid var(--primary-color)' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Registered Office</h2>
           <p style={{ marginBottom: '0.5rem' }}>No.16, II Floor, 6th Cross Extension,</p>
-          <p style={{ marginBottom: '0.5rem' }}>Anna Nagar, Pondicherry-605005</p>
+          <p style={{ marginBottom: '0.5rem' }}>Anna Nagar, Puducherry-605005</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9819853536, +91-9443036464</p>
           <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholisociety@gmail.com">putholisociety@gmail.com</a></p>
 

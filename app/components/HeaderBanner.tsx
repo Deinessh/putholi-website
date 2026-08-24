@@ -18,7 +18,7 @@ export default function HeaderBanner() {
           {/* Left Column: Quote (Serif font, Italic, Dash-Quote Style, Center Aligned) */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.15rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4' }}>
-              &ldquo; PAY BACK<br /> your society &rdquo;
+              &ldquo; PAY BACK<br /> your society<br /> by Dr.B.R.Ambedkar &rdquo;
             </div>
           </div>
 

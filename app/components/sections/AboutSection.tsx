@@ -79,7 +79,7 @@ export default function AboutSection() {
           </p>
         </motion.div>
 
-        <motion.section variants={itemVariants} style={{ marginTop: '4rem', marginBottom: 'var(--spacing-2xl)' }}>
+        {/* <motion.section variants={itemVariants} style={{ marginTop: '4rem', marginBottom: 'var(--spacing-2xl)' }}>
           <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}>Governing Members & The People</h2>
           <div className="grid md:grid-cols-2 gap-md">
             <div className="glass-panel hover-lift">
@@ -103,7 +103,7 @@ export default function AboutSection() {
               <p style={{ color: 'var(--text-secondary)' }}>Putholi International Co-coordinator</p>
             </div>
           </div>
-        </motion.section>
+        </motion.section> */}
 
         <motion.section variants={itemVariants} className="glass-panel">
           <h2>Infrastructure Capacity</h2>

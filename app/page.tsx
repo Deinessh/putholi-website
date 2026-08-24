@@ -20,7 +20,7 @@ export default function Home() {
               Empowering the Downtrodden
             </h1>
             <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '600px' }}>
-              Putholi Empowerment Society is dedicated to the socio-economic development of SC, ST, OBC, and Minorities in Tamil Nadu and Puducherry.
+              Transformed as Skilled, Self -employed, Entrepreneurship, Build Capital, Co-operative and Enterprises.
             </p>
             <div className="flex" style={{ gap: '1rem' }}>
               <Link href="#about" className="nav-btn-outline" style={{ fontSize: '1.1rem', padding: '0.8rem 2rem' }}>

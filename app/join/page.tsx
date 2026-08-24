@@ -104,7 +104,7 @@ function JoinFormContent() {
                 <input type="text" name="education" className="form-control" placeholder="Enter qualification details" />
               </div>
               <div className="form-group" style={{ marginBottom: 0 }}>
-                <label className="form-label">Employment</label>
+                <label className="form-label">Employment / Professional</label>
                 <input type="text" name="employment" className="form-control" />
               </div>
               <div className="form-group" style={{ marginBottom: 0 }}>
@@ -208,6 +208,11 @@ function JoinFormContent() {
             <div className="form-group">
               <label className="form-label">Requisition / Other Needs</label>
               <textarea name="needy_requisition_needs" rows={2} className="form-control" placeholder="Specify requirements"></textarea>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Project for your self employment / Enterprise / Entrepreneurship</label>
+              <textarea name="needy_project_self_employment" rows={2} className="form-control" placeholder="Specify project details"></textarea>
             </div>
           </div>
         )}
@@ -346,6 +351,11 @@ function JoinFormContent() {
             <label className="form-label">Upload ID Proof(Any govt id)</label>
             <input type="file" name="idProof" accept="image/*,.pdf" className="form-control" />
           </div>
+        </div>
+
+        <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+          <label className="form-label">Upload Educational Certificate / Diploma / Degree</label>
+          <input type="file" name="educationCertificate" accept="image/*,.pdf" className="form-control" />
         </div>
 
         {activeTab === 'beneficiary' && (

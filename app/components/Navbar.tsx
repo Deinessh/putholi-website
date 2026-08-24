@@ -31,7 +31,7 @@ export default function Navbar() {
           }
         });
       },
-      { rootMargin: "-30% 0px -70% 0px" } // trigger when section is in top 30% of viewport
+      { rootMargin: "-30% 0px -70% 0px" }
     );
 
     const sections = document.querySelectorAll("section[id]");
@@ -64,13 +64,20 @@ export default function Navbar() {
       { href: '/vision', label: 'Vision' },
       { href: '/mission', label: 'Mission' },
       { href: '/objective', label: 'Objective' },
-      { href: '/value', label: 'Value' }
+      { href: '/value', label: 'Value' },
+      { href: '/news-reports', label: 'News & Reports' }
     ] },
     { href: '/program', id: 'program', label: 'Program' },
     { href: '/activity', id: 'activity', label: 'Activity' },
     { href: '/achievement', id: 'achievement', label: 'Achievement' },
     { href: '/membership', id: 'membership', label: 'Member' },
-    { href: '/news-reports', id: 'news-reports', label: 'News & Reports' },
+    { href: '/latest-opportunities', id: 'latest-opportunities', label: 'Latest Opportunities', dropdown: [
+      { href: '/latest-opportunities/employment', label: 'Employment' },
+      { href: '/latest-opportunities/entrepreneurship', label: 'Entrepreneurship' },
+      { href: '/latest-opportunities/schemes', label: 'Schemes' },
+      { href: '/latest-opportunities/scholarship', label: 'Scholarship' },
+      { href: '/latest-opportunities/grant-and-aid', label: 'Grant and aid' }
+    ] },
     { href: '/gallery', id: 'gallery', label: 'Gallery' },
     { href: '/contact', id: 'contact', label: 'Contact' },
   ];
@@ -90,16 +97,17 @@ export default function Navbar() {
           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
           border-radius: 0.5rem;
           padding: 0.5rem 0;
-          min-width: 180px;
+          min-width: 200px;
           list-style: none;
           z-index: 1000;
         }
         .dropdown-menu li a {
           display: block;
-          padding: 0.5rem 1rem;
+          padding: 0.55rem 1.1rem;
           color: var(--text-primary);
           text-decoration: none;
           transition: background-color 0.2s;
+          font-size: 0.95rem;
         }
         .dropdown-menu li a:hover {
           background-color: var(--primary-light);
@@ -119,7 +127,7 @@ export default function Navbar() {
           {navLinks.map((link) => {
             const isActive = 
               (pathname === "/" && activeSection === link.id) || 
-              (pathname !== "/" && pathname === `/${link.id}`);
+              (pathname !== "/" && (pathname === `/${link.id}` || pathname.startsWith(`/${link.id}`)));
               
             return (
               <li key={link.label} style={{ position: 'relative' }} className={link.dropdown ? 'nav-item-with-dropdown' : ''}>
@@ -169,7 +177,7 @@ export default function Navbar() {
                   <li><Link href="/join?type=beneficiary">Beneficiary</Link></li>
                   <li><Link href="/join?type=needy">NEEDY</Link></li>
                   <li>
-                    <button onClick={() => logout()} style={{ background: 'none', border: 'none', padding: '0.5rem 1rem', width: '100%', textAlign: 'left', cursor: 'pointer', color: '#ef4444', fontSize: '1rem' }}>
+                    <button onClick={() => logout()} style={{ background: 'none', border: 'none', padding: '0.55rem 1.1rem', width: '100%', textAlign: 'left', cursor: 'pointer', color: '#ef4444', fontSize: '0.95rem' }}>
                       Logout
                     </button>
                   </li>
@@ -179,7 +187,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Mobile Menu Button - positioned absolutely to the right */}
+        {/* Mobile Menu Button */}
         {mounted && (
           <button 
             className="mobile-menu-btn" 
@@ -228,25 +236,36 @@ export default function Navbar() {
               {navLinks.map((link) => {
                 const isActive = 
                   (pathname === "/" && activeSection === link.id) || 
-                  (pathname !== "/" && pathname === `/${link.id}`);
+                  (pathname !== "/" && (pathname === `/${link.id}` || pathname.startsWith(`/${link.id}`)));
                 
                 return (
-                  <Link key={link.label} href={link.href} onClick={() => setIsMobileMenuOpen(false)} style={{
-                    fontSize: '1.2rem',
-                    fontWeight: isActive ? 700 : 500,
-                    color: isActive ? 'var(--primary-color)' : 'var(--text-secondary)',
-                    textDecoration: 'none',
-                    borderLeft: isActive ? '4px solid var(--primary-color)' : '4px solid transparent',
-                    paddingLeft: '1rem',
-                    paddingTop: '0.4rem',
-                    paddingBottom: '0.4rem',
-                    display: 'block',
-                    backgroundColor: isActive ? 'rgba(30, 64, 175, 0.05)' : 'transparent',
-                    borderRadius: '0 0.5rem 0.5rem 0',
-                    transition: 'all 0.2s'
-                  }}>
-                    {link.label}
-                  </Link>
+                  <div key={link.label}>
+                    <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)} style={{
+                      fontSize: '1.15rem',
+                      fontWeight: isActive ? 700 : 500,
+                      color: isActive ? 'var(--primary-color)' : 'var(--text-secondary)',
+                      textDecoration: 'none',
+                      borderLeft: isActive ? '4px solid var(--primary-color)' : '4px solid transparent',
+                      paddingLeft: '1rem',
+                      paddingTop: '0.4rem',
+                      paddingBottom: '0.4rem',
+                      display: 'block',
+                      backgroundColor: isActive ? 'rgba(30, 64, 175, 0.05)' : 'transparent',
+                      borderRadius: '0 0.5rem 0.5rem 0',
+                      transition: 'all 0.2s'
+                    }}>
+                      {link.label}
+                    </Link>
+                    {link.dropdown && (
+                      <div style={{ paddingLeft: '1.8rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.4rem' }}>
+                        {link.dropdown.map(dropItem => (
+                          <Link key={dropItem.label} href={dropItem.href} onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', color: '#64748b', textDecoration: 'none' }}>
+                            • {dropItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
 

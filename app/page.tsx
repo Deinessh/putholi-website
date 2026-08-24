@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import AboutSection from './components/sections/AboutSection';
 
+const governingMembers = [
+  { name: 'K. Uthirapathi, IRS(Rtd)', title: 'Founder-President' },
+  { name: 'Mr. Santharaj Periyasamy', title: 'Entrepreneur, Secretary (TN & Puducherry)' },
+  { name: 'Mr.M.S.Karthikeyan', title: 'Treasurer' },
+  { name: 'Mr.V.Gangatharan, M.Tech', title: 'Administrative Secretary' },
+  { name: 'Er. P. Nagarajan, B.E., MBA', title: 'Putholi International Co-coordinator' },
+];
+
 export default function Home() {
   return (
     <div>
@@ -37,41 +45,36 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-xl" style={{ alignItems: 'stretch' }}>
 
-            {/* Left Division: Governing Members & Leaderships */}
+            {/* Left Division: Governing Members & The People */}
             <div className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--primary-color)', padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem', marginBottom: '1.2rem', borderBottom: '2px solid #e2e8f0', paddingBottom: '0.5rem' }}>
-                Governing Members & Leaderships
+              <h3 style={{ color: 'var(--primary-color)', fontSize: '1.5rem', marginBottom: '1.5rem', borderBottom: '2px solid #e2e8f0', paddingBottom: '0.5rem' }}>
+                Governing Members & The People
               </h3>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', fontSize: '1rem', color: 'var(--text-primary)' }}>
-                <li style={{ padding: '0.6rem 0.8rem', backgroundColor: '#eff6ff', borderRadius: '0.5rem', borderLeft: '4px solid var(--primary-color)' }}>
-                  <strong>Founder-President:</strong> K. Uthirapathi, IRS (Rtd.)
-                </li>
-                <li style={{ padding: '0.6rem 0.8rem', backgroundColor: '#eff6ff', borderRadius: '0.5rem', borderLeft: '4px solid var(--primary-color)' }}>
-                  <strong>Secretary & Editor:</strong> P. Nagarajan, B.E., MBA
-                </li>
-                <li style={{ padding: '0.6rem 0.8rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem', borderLeft: '4px solid #94a3b8' }}>
-                  <strong>Executive Body:</strong> Vice Presidents, Joint Secretaries, Treasurer & Legal Experts
-                </li>
-                <li style={{ padding: '0.6rem 0.8rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem', borderLeft: '4px solid #94a3b8' }}>
-                  <strong>State Units:</strong> Puducherry, Karaikal, Chennai, Mayiladuthurai, Thanjavur, Vellore, Coimbatore, Cuddalore, Neyveli & Bengaluru
-                </li>
-              </ul>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {governingMembers.map((member, index) => (
+                  <div key={index} style={{ backgroundColor: 'white', padding: '1rem 1.25rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
+                    <h4 style={{ color: '#1e3a8a', fontSize: '1.05rem', fontWeight: 'bold', margin: '0 0 0.3rem 0' }}>{member.name}</h4>
+                    <p style={{ color: '#475569', fontSize: '0.9rem', margin: 0, fontWeight: '500' }}>{member.title}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Right Division: Think Tank */}
             <div className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--secondary-color)', padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem', marginBottom: '1.2rem', borderBottom: '2px solid #e2e8f0', paddingBottom: '0.5rem' }}>
+              <h3 style={{ color: 'var(--secondary-color)', fontSize: '1.5rem', marginBottom: '1.5rem', borderBottom: '2px solid #e2e8f0', paddingBottom: '0.5rem' }}>
                 Think Tank
               </h3>
               <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-primary)', marginBottom: '1.5rem' }}>
                 Our Think Tank comprises Bureaucrats (in Service & Retired), Scholars, Subject Matter Experts, and Women Social Activists providing strategic direction, policy analysis, and guidance for marginalized community advancement.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: 'auto' }}>
-                <div style={{ backgroundColor: '#fefce8', padding: '1rem', borderRadius: '0.5rem', borderLeft: '4px solid #eab308', fontStyle: 'italic', fontSize: '0.95rem' }}>
+                <div style={{ backgroundColor: '#fefce8', padding: '1.2rem', borderRadius: '0.5rem', borderLeft: '4px solid #eab308', fontStyle: 'italic', fontSize: '0.95rem' }}>
                   &ldquo;Executing the vision of Babasaheb Dr. B.R. Ambedkar with dedicated community participation.&rdquo;
-                  <div style={{ fontStyle: 'normal', fontWeight: 'bold', marginTop: '0.4rem', color: 'var(--text-primary)' }}>&ndash; Think Tank Advisory Panel</div>
+                  <div style={{ fontStyle: 'normal', fontWeight: 'bold', marginTop: '0.5rem', color: 'var(--text-primary)' }}>&ndash; Think Tank Advisory Panel</div>
                 </div>
-                <div style={{ backgroundColor: '#f8fafc', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #e2e8f0', fontSize: '0.95rem' }}>
+                <div style={{ backgroundColor: '#f8fafc', padding: '1.2rem', borderRadius: '0.5rem', border: '1px solid #e2e8f0', fontSize: '0.95rem' }}>
                   <strong>Key Focus Areas:</strong> Career Guidance Institutes, Educational Empowerment, Multi-State Cooperative Credit Society & Socio-Economic Self-Reliance.
                 </div>
               </div>

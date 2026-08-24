@@ -18,7 +18,7 @@ export default function HeaderBanner() {
           {/* Left Column: Quote (Serif font, Italic, Dash-Quote Style, Center Aligned) */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.15rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4' }}>
-              &ldquo;&ndash; PAY BACK<br />to your society &ndash;&rdquo;
+              &ldquo; PAY BACK<br /> your society &rdquo;
             </div>
           </div>
 
@@ -61,7 +61,7 @@ export default function HeaderBanner() {
           {/* Right Column: Quote (Serif font, Italic, Dash-Quote Style, Center Aligned) */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.05rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', maxWidth: '280px' }}>
-              &ldquo;&ndash; Contribute your<br />Time, knowledge, experience<br />and a little money &ndash;&rdquo;
+              &ldquo; Contribute your Time,<br />knowledge, experience<br />and a little money &rdquo;
             </div>
           </div>
 

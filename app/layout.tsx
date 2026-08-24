@@ -69,6 +69,7 @@ export default function RootLayout({
                     Chennai, (Housed at WAES),<br />
                     Tamil Nadu-600040<br />
                     <br />
+                    <br />
                     <strong>Phone:</strong> +91-9444161164, <br /> +91-7358641153<br />
                     <strong>Email:</strong> putholinews@gmail.com
                   </address>

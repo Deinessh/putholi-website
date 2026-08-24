@@ -166,7 +166,8 @@ export default function Navbar() {
               ) : (
                 <>
                   <li><Link href="/dashboard">Dashboard</Link></li>
-                  <li><Link href="/join">Application Form</Link></li>
+                  <li><Link href="/join?type=beneficiary">Beneficiary</Link></li>
+                  <li><Link href="/join?type=needy">NEEDY</Link></li>
                   <li>
                     <button onClick={() => logout()} style={{ background: 'none', border: 'none', padding: '0.5rem 1rem', width: '100%', textAlign: 'left', cursor: 'pointer', color: '#ef4444', fontSize: '1rem' }}>
                       Logout
@@ -269,8 +270,11 @@ export default function Navbar() {
                         <Link href="/dashboard" className="btn" style={{ background: '#0284c7', color: 'white', textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
                           Dashboard
                         </Link>
-                        <Link href="/join" className="btn btn-primary" style={{ textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
-                          Application Form
+                        <Link href="/join?type=beneficiary" className="btn btn-primary" style={{ textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
+                          Beneficiary
+                        </Link>
+                        <Link href="/join?type=needy" className="btn" style={{ background: '#059669', color: 'white', textAlign: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>
+                          NEEDY
                         </Link>
                         <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="btn" style={{ background: '#ef4444', color: 'white' }}>
                           Logout

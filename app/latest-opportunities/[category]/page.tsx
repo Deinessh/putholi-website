@@ -96,31 +96,6 @@ export default function OpportunityCategoryPage() {
             </div>
           ))}
         </div>
-
-      </div>
-
-      {/* Navigation to other categories */}
-      <div style={{ textAlign: 'center' }}>
-        <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>Explore Other Opportunities</h3>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', justifyContent: 'center' }}>
-          {Object.entries(categories).map(([key, cat]) => (
-            <Link 
-              key={key} 
-              href={`/latest-opportunities/${key}`} 
-              style={{
-                padding: '0.6rem 1.2rem',
-                borderRadius: '2rem',
-                backgroundColor: key === categoryKey ? cat.color : '#f1f5f9',
-                color: key === categoryKey ? 'white' : '#334155',
-                textDecoration: 'none',
-                fontWeight: 600,
-                fontSize: '0.95rem'
-              }}
-            >
-              {cat.title.split(' ')[0]}
-            </Link>
-          ))}
-        </div>
       </div>
     </div>
   );

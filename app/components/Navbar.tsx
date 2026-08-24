@@ -69,7 +69,7 @@ export default function Navbar() {
     { href: '/program', id: 'program', label: 'Program' },
     { href: '/activity', id: 'activity', label: 'Activity' },
     { href: '/achievement', id: 'achievement', label: 'Achievement' },
-    { href: '/membership', id: 'membership', label: 'Membership' },
+    { href: '/membership', id: 'membership', label: 'Member' },
     { href: '/news-reports', id: 'news-reports', label: 'News & Reports' },
     { href: '/gallery', id: 'gallery', label: 'Gallery' },
     { href: '/contact', id: 'contact', label: 'Contact' },

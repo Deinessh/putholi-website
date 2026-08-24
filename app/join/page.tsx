@@ -59,7 +59,7 @@ export default function Join() {
 
   return (
     <div className="container" style={{ padding: 'var(--spacing-2xl) 0', maxWidth: '900px' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '1rem' }}>Membership Registration Form</h1>
+      <h1 style={{ textAlign: 'center', marginBottom: '1rem' }}>Member Registration Form</h1>
       
       <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}>
         <button 

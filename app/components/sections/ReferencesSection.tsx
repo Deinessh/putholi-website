@@ -254,11 +254,9 @@ export default function ReferencesSection() {
                   </div>
 
                   <div style={{ backgroundColor: '#eff6ff', padding: '2rem', borderRadius: '1rem', border: '1px solid #bfdbfe' }}>
-                    <h3 style={{ color: '#1e3a8a', marginBottom: '1rem' }}>Membership Fee Details</h3>
+                    <h3 style={{ color: '#1e3a8a', marginBottom: '1rem' }}>Member Fee Details</h3>
                     <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.95rem' }}>
-                      <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Enrollment Fee:</span> <strong>Rs. 500</strong></li>
-                      <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Annual Membership:</span> <strong>Rs. 1,000</strong></li>
-                      <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Lifetime Membership:</span> <strong>Rs. 10,000</strong></li>
+                      <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Lifetime Membership:</span> <strong>Rs. 10,500</strong></li>
                     </ul>
 
                     <h3 style={{ color: '#1e3a8a', marginTop: '1.5rem', marginBottom: '1rem' }}>Bank Details</h3>

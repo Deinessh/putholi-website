@@ -39,7 +39,7 @@ export default function Contact() {
       <div className="grid md:grid-cols-2 gap-lg" style={{ marginBottom: 'var(--spacing-2xl)' }}>
         <div className="glass-panel" style={{ borderTop: '4px solid var(--primary-color)' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Registered Office</h2>
-          <p style={{ marginBottom: '0.5rem' }}>No.16, 6th Cross Extension, II Floor,</p>
+          <p style={{ marginBottom: '0.5rem' }}>No.16, II Floor, 6th Cross Extension,</p>
           <p style={{ marginBottom: '0.5rem' }}>Anna Nagar, Pondicherry-605005</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9819853536, +91-9443036464</p>
           <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholisociety@gmail.com">putholisociety@gmail.com</a></p>
@@ -61,9 +61,9 @@ export default function Contact() {
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Administrative Office</h2>
 
           <p style={{ marginBottom: '0.5rem' }}>No 43, 3rd Cross St, AG Block,</p>
-          <p style={{ marginBottom: '0.5rem' }}>River View Colony, Anna Nagar, Chennai,</p>
-          <p style={{ marginBottom: '0.5rem' }}>Tamil Nadu-600040.</p>
-          <p style={{ marginBottom: '0.5rem' }}>(Housed at WAES)</p>
+          <p style={{ marginBottom: '0.5rem' }}>River View Colony, Anna Nagar,</p>
+          <p style={{ marginBottom: '0.5rem' }}>Chennai, (Housed at WAES),</p>
+          <p style={{ marginBottom: '0.5rem' }}>Tamil Nadu-600040</p>
           <p style={{ marginBottom: '0.5rem' }}><strong>Phone No.:</strong> +91-9444161164, +91-7358641153</p>
           <p style={{ marginBottom: '1.5rem' }}><strong>E-mail:</strong> <a href="mailto:putholinews@gmail.com">putholinews@gmail.com</a></p>
 

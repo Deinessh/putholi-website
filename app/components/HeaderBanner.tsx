@@ -9,16 +9,16 @@ const members = [
 
 export default function HeaderBanner() {
   return (
-    <div style={{ backgroundColor: 'rgba(121, 182, 248, 1)', padding: '0.75rem 0.5rem', borderBottom: '1px solid #e2e8f0', width: '100%' }}>
+    <div style={{ backgroundColor: 'rgba(121, 182, 248, 1)', padding: '0.85rem 0.5rem', borderBottom: '1px solid #e2e8f0', width: '100%' }}>
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* 3-Column Layout for Desktop */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
 
-          {/* Left Column: Quote (No background, Italic, Quotes, Center Aligned) */}
+          {/* Left Column: Quote (Serif font, Italic, Dash-Quote Style, Center Aligned) */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-            <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.1rem', fontStyle: 'italic', lineHeight: '1.4' }}>
-              &ldquo;PAY BACK<br />to your society&rdquo;
+            <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.15rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4' }}>
+              &ldquo;&ndash; PAY BACK<br />to your society &ndash;&rdquo;
             </div>
           </div>
 
@@ -58,10 +58,10 @@ export default function HeaderBanner() {
             <p style={{ color: '#7f1d1d', fontSize: '0.85rem', margin: '0 0 0.2rem 0', fontWeight: '600' }}>Reg No.302/2018 Act xxi of Societies Act 1860</p>
           </div>
 
-          {/* Right Column: Quote (No background, Italic, Quotes, Center Aligned) */}
+          {/* Right Column: Quote (Serif font, Italic, Dash-Quote Style, Center Aligned) */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-            <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: '1.4', maxWidth: '280px' }}>
-              &ldquo;Contribute your<br />Time, knowledge, experience<br />and a little money&rdquo;
+            <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.05rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', maxWidth: '280px' }}>
+              &ldquo;&ndash; Contribute your<br />Time, knowledge, experience<br />and a little money &ndash;&rdquo;
             </div>
           </div>
 

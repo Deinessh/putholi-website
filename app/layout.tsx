@@ -42,7 +42,7 @@ export default function RootLayout({
                 <li><Link href="/about" style={{ color: '#cbd5e1', textDecoration: 'none' }}>About Us</Link></li>
                 <li><Link href="/activity" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Activities</Link></li>
                 <li><Link href="/program" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Programs</Link></li>
-                <li><Link href="/membership" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Membership Benefits</Link></li>
+                <li><Link href="/membership" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Member Benefits</Link></li>
                 <li><Link href="/gallery" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Gallery</Link></li>
                 <li><Link href="/join" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Join as Member</Link></li>
               </ul>
@@ -53,22 +53,21 @@ export default function RootLayout({
               <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', color: '#60a5fa' }}>Contact Us</h3>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
-                <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: '#cbd5e1' }}>
-                  <strong style={{ color: 'white' }}>Registered Office:</strong><br />
-                  No.16, 6th Cross Extension, <br />
-                  II Floor,<br />
+                <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: '#cbd5e1', textAlign: 'justify' }}>
+                  <strong style={{ color: 'white', display: 'block', textAlign: 'left' }}>Registered Office:</strong>
+                  No.16, II Floor, 6th Cross Extension,<br />
                   Anna Nagar, Pondicherry-605005<br />
                   <br />
                   <strong>Phone:</strong> +91-9819853536, +91-9443036464<br />
                   <strong>Email:</strong> putholisociety@gmail.com
                 </address>
 
-                <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: '#cbd5e1' }}>
-                  <strong style={{ color: 'white' }}>Administrative Office:</strong><br />
-
+                <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: '#cbd5e1', textAlign: 'justify' }}>
+                  <strong style={{ color: 'white', display: 'block', textAlign: 'left' }}>Administrative Office:</strong>
                   No 43, 3rd Cross St, AG Block,<br />
-                  River View Colony, Anna Nagar, Chennai,Tamil Nadu-600040<br />
-                  (Housed at WAES)<br />
+                  River View Colony, Anna Nagar,<br />
+                  Chennai, (Housed at WAES),<br />
+                  Tamil Nadu-600040<br />
                   <br />
                   <strong>Phone:</strong> +91-9444161164, +91-7358641153<br />
                   <strong>Email:</strong> putholinews@gmail.com

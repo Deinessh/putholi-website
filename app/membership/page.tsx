@@ -18,7 +18,7 @@ export default function Membership() {
       <motion.div initial="hidden" animate="visible" variants={containerVariants}>
 
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h1 style={{ color: 'var(--primary-color)' }}>Membership & Contribution</h1>
+          <h1 style={{ color: 'var(--primary-color)' }}>Member & Contribution</h1>
         </motion.div>
 
         <motion.div variants={itemVariants} className="glass-panel" style={{ marginBottom: '3rem' }}>
@@ -29,31 +29,24 @@ export default function Membership() {
             PUTHOLI (new light) put-forth the requisition to the people (who got the benefits by education, job opportunities & other form) to payback their contribution for society by their <strong>"Time, Knowledge, Experience & Little Money"</strong>.
           </p>
           <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-            As a little contribution by money, they are welcome to join as a 'Member of Putholi Empowerment Society' by paying the following Membership Fee:
+            As a little contribution by money, they are welcome to join as a 'Member of Putholi Empowerment Society' by paying the Lifetime Membership Fee:
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-lg" style={{ marginBottom: '3rem' }}>
           {/* Fee Details */}
           <motion.div variants={itemVariants} className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--primary-color)' }}>
-            <h2 style={{ color: 'var(--primary-color)', marginBottom: '1.5rem' }}>Membership Fees</h2>
+            <h2 style={{ color: 'var(--primary-color)', marginBottom: '1.5rem' }}>Member Fees</h2>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '1.1rem' }}>
-              <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.5rem' }}>
-                <span>Enrollment Fee:</span> <strong>Rs. 500/- (one time)</strong>
-              </li>
-              <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.5rem' }}>
-                <span>Annual Subscription Fee:</span> <strong>Rs. 1000/-</strong>
-              </li>
-              <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.5rem' }}>
-                <span>Lifetime Membership Fee:</span> <strong>Rs. 10,000/-</strong>
+              <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.5rem', borderBottom: '1px solid #e2e8f0' }}>
+                <span>Lifetime Membership Fee:</span> <strong style={{ color: 'var(--primary-color)', fontSize: '1.2rem' }}>Rs. 10,500/-</strong>
               </li>
             </ul>
             <div style={{ marginTop: '1.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
-              <p style={{ marginBottom: '0.5rem' }}>The people who want to pay "Enrollment Fee & Annual Subscription Fee" may pay both amount <strong>Rs. 1,500/-</strong> by online payments.</p>
-              <p>The people who like to become Lifetime Membership can pay the "Enrollment Fee & Lifetime Membership Fee" as <strong>Rs. 10,500/-</strong> online.</p>
+              <p>The people who like to become Lifetime Member can pay the Lifetime Membership Fee as <strong>Rs. 10,500/-</strong> online / Bank Transfer.</p>
             </div>
             <div style={{ marginTop: '2rem' }}>
-              <a href="/join" className="nav-btn" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>Fill Membership Form (Online)</a>
+              <a href="/join" className="nav-btn" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>Fill Member Form (Online)</a>
             </div>
           </motion.div>
 

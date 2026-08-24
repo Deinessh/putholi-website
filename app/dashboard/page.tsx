@@ -81,7 +81,7 @@ export default function Dashboard() {
             <h1 style={{ marginBottom: '2rem', color: 'var(--primary-color)' }}>Welcome, {user.name}</h1>
 
             <div className="glass-panel" style={{ background: 'rgba(255,255,255,0.95)' }}>
-                <h2 style={{ marginBottom: '1.5rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.5rem' }}>Your Membership Application</h2>
+                <h2 style={{ marginBottom: '1.5rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '0.5rem' }}>Your Member Application</h2>
                 
                 {!membership ? (
                     <div>

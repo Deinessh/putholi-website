@@ -9,23 +9,16 @@ const members = [
 
 export default function HeaderBanner() {
   return (
-    <div style={{ backgroundColor: 'rgba(121, 182, 248, 1)', padding: '0.5rem', borderBottom: '1px solid #e2e8f0', width: '100%' }}>
-      <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+    <div style={{ backgroundColor: 'rgba(121, 182, 248, 1)', padding: '0.75rem 0.5rem', borderBottom: '1px solid #e2e8f0', width: '100%' }}>
+      <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
 
         {/* 3-Column Layout for Desktop */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'stretch', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
 
-          {/* Left Column: Oval then Address */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: '1 1 200px', justifyContent: 'space-between' }}>
-            <div className="header-oval" style={{ backgroundColor: '#1e3a8a', borderRadius: '50px', padding: '0.5rem 1.5rem', textAlign: 'center', color: '#ffffffff', fontWeight: 'bold', fontSize: '0.9rem', boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1)', maxWidth: '200px' }}>
-              <div style={{ fontSize: '1.2rem', marginBottom: '0' }}>PAY BACK</div>
-              <div>to your society</div>
-            </div>
-
-            <div className="header-address" style={{ padding: '0 0.8rem', borderRadius: '8px', fontSize: '0.85rem', color: '#1e293b', textAlign: 'left', marginTop: 'auto' }}>
-              <strong style={{ color: '#1e3a8a', display: 'block', marginBottom: '0.1rem', fontSize: '0.9rem' }}>Registered Office</strong>
-              No.16, 6th Cross Extension, II Floor,<br />
-              Anna Nagar, Pondicherry-605005
+          {/* Left Column: Quote (No background, Italic, Quotes, Center Aligned) */}
+          <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+            <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.1rem', fontStyle: 'italic', lineHeight: '1.4' }}>
+              &ldquo;PAY BACK<br />to your society&rdquo;
             </div>
           </div>
 
@@ -58,27 +51,17 @@ export default function HeaderBanner() {
               </div>
             </div>
 
+            <h2 style={{ color: '#1e3a8a', fontSize: '1.3rem', fontWeight: 'bold', margin: '0 0 0.4rem 0' }}>PUTHOLI EMPOWERMENT SOCIETY</h2>
+            <p style={{ color: '#7f1d1d', fontSize: '0.9rem', margin: '0 0 0.2rem 0', fontWeight: 'bold' }}>(For the Socio-economic Development of SC,ST,OBC & Minorities)</p>
             <h1 style={{ color: '#1e3a8a', fontSize: '1.4rem', fontWeight: '900', margin: '0 0 0.2rem 0', textShadow: '1px 1px 2px rgba(255,255,255,0.5)' }}>புத்தொளி தன்னிறைவு சமுதாயம்</h1>
             <p style={{ color: '#1e3a8a', fontSize: '0.9rem', margin: 0, fontWeight: '600' }}>தமிழ்நாடு மற்றும் புதுச்சேரி</p>
-            <h2 style={{ color: '#1e3a8a', fontSize: '1.3rem', fontWeight: 'bold', margin: '0 0 0.4rem 0' }}>Putholi Empowerment Society</h2>
             <p style={{ color: '#7f1d1d', fontSize: '0.85rem', margin: '0 0 0.2rem 0', fontWeight: '600' }}>Reg No.302/2018 Act xxi of Societies Act 1860</p>
-            <p style={{ color: '#7f1d1d', fontSize: '0.9rem', margin: '0 0 0.2rem 0', fontWeight: 'bold' }}>(For the Socio-economic Development of SC,ST,OBC & Minorities)</p>
           </div>
 
-          {/* Right Column: Oval then Address */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: '1 1 200px', alignItems: 'flex-end', justifyContent: 'space-between' }}>
-            <div className="header-oval" style={{ backgroundColor: '#1e3a8a', borderRadius: '50px', padding: '0.5rem 1.2rem', textAlign: 'center', color: '#ffffffff', fontWeight: 'bold', fontSize: '0.9rem', maxWidth: '300px', boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1)' }}>
-              <div>Contribute your</div>
-              <div>Time, knowledge, experience</div>
-              <div>and a little money</div>
-            </div>
-
-            <div className="header-address header-address-right" style={{ padding: '0 0.5rem', borderRadius: '8px', fontSize: '0.85rem', color: '#1e293b', textAlign: 'right', marginTop: 'auto' }}>
-              <strong style={{ color: '#1e3a8a', display: 'block', marginBottom: '0.1rem', fontSize: '0.9rem' }}>Administrative Office</strong>
-              No 43, 3rd Cross St, AG Block, <br />
-              River View Colony, Anna Nagar,<br />
-              Chennai, Tamil Nadu-600040<br />
-              (Housed at WAES)
+          {/* Right Column: Quote (No background, Italic, Quotes, Center Aligned) */}
+          <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+            <div style={{ color: '#1e3a8a', fontWeight: 'bold', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: '1.4', maxWidth: '280px' }}>
+              &ldquo;Contribute your<br />Time, knowledge, experience<br />and a little money&rdquo;
             </div>
           </div>
 

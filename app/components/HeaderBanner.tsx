@@ -19,14 +19,14 @@ export default function HeaderBanner() {
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '240px' }}>
               {/* Top Left Quote Mark */}
-              <span style={{ position: 'absolute', top: '-10px', left: '50px', fontSize: '3rem', lineHeight: '1', color: '#1e3a8a', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+              <span style={{ position: 'absolute', top: '-10px', left: '50px', fontSize: '3rem', lineHeight: '1', color: '#fff700ff', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 
-              <div style={{ color: '#1e3a8a', fontWeight: '800', fontSize: '1.1rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 2px rgba(255,255,255,0.4)' }}>
+              <div style={{ color: '#fff700ff', fontWeight: '800', fontSize: '1.1rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 2px rgba(255,255,255,0.4)' }}>
                 PAY BACK<br />your society<br />by Dr.B.R.Ambedkar
               </div>
 
               {/* Bottom Right Quote Mark */}
-              <span style={{ position: 'absolute', bottom: '-20px', right: '-5px', fontSize: '3rem', lineHeight: '1', color: '#1e3a8a', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
+              <span style={{ position: 'absolute', bottom: '-20px', right: '-5px', fontSize: '3rem', lineHeight: '1', color: '#fff700ff', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 
@@ -70,14 +70,14 @@ export default function HeaderBanner() {
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '280px' }}>
               {/* Top Left Quote Mark */}
-              <span style={{ position: 'absolute', top: '-12px', left: '-5px', fontSize: '3rem', lineHeight: '1', color: '#1e3a8a', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+              <span style={{ position: 'absolute', top: '-12px', left: '-5px', fontSize: '3rem', lineHeight: '1', color: '#fff700ff', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 
-              <div style={{ color: '#1e3a8a', fontWeight: '800', fontSize: '1.02rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 2px rgba(255,255,255,0.4)' }}>
+              <div style={{ color: '#fff700ff', fontWeight: '800', fontSize: '1.02rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 2px rgba(255,255,255,0.4)' }}>
                 Contribute your Time,<br />knowledge, experience<br />and a little money
               </div>
 
               {/* Bottom Right Quote Mark */}
-              <span style={{ position: 'absolute', bottom: '-20px', right: '-5px', fontSize: '3rem', lineHeight: '1', color: '#1e3a8a', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
+              <span style={{ position: 'absolute', bottom: '-20px', right: '-5px', fontSize: '3rem', lineHeight: '1', color: '#fff700ff', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 

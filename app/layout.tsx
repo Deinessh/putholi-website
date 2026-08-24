@@ -58,6 +58,7 @@ export default function RootLayout({
                     No.16, II Floor,<br /> 6th Cross Extension,<br />
                     Anna Nagar, Puducherry-605005<br />
                     <br />
+                    <br />
                     <strong>Phone:</strong> +91-9819853536, <br /> +91-9443036464<br />
                     <strong>Email:</strong> putholisociety@gmail.com
                   </address>
@@ -68,7 +69,6 @@ export default function RootLayout({
                     River View Colony, Anna Nagar,<br />
                     Chennai, (Housed at WAES),<br />
                     Tamil Nadu-600040<br />
-                    <br />
                     <br />
                     <strong>Phone:</strong> +91-9444161164, <br /> +91-7358641153<br />
                     <strong>Email:</strong> putholinews@gmail.com

@@ -3,6 +3,7 @@ import './globals.css';
 import Link from 'next/link';
 import Navbar from './components/Navbar';
 import HeaderBanner from './components/HeaderBanner';
+import AnnouncementTicker from './components/AnnouncementTicker';
 
 import { AuthProvider } from '../lib/AuthContext';
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <AuthProvider>
           <HeaderBanner />
           <Navbar />
+          <AnnouncementTicker />
 
           <div style={{ display: 'flex', minHeight: 'calc(100vh - 200px)', flexDirection: 'column' }} className="main-layout-container">
             <main style={{ flexGrow: 1 }}>

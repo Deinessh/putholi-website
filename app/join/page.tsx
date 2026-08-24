@@ -353,10 +353,12 @@ function JoinFormContent() {
           </div>
         </div>
 
-        <div className="form-group" style={{ marginBottom: '1.5rem' }}>
-          <label className="form-label">Upload Educational Certificate / Diploma / Degree</label>
-          <input type="file" name="educationCertificate" accept="image/*,.pdf" className="form-control" />
-        </div>
+        {activeTab === 'needy' && (
+          <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+            <label className="form-label">Upload Educational Certificate / Diploma / Degree</label>
+            <input type="file" name="educationCertificate" accept="image/*,.pdf" className="form-control" />
+          </div>
+        )}
 
         {activeTab === 'beneficiary' && (
           <div className="form-group" style={{ marginBottom: '2rem' }}>

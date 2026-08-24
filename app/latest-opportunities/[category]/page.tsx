@@ -97,14 +97,6 @@ export default function OpportunityCategoryPage() {
           ))}
         </div>
 
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-          <Link href="/join?type=beneficiary" className="nav-btn" style={{ textDecoration: 'none', background: data.color, color: 'white' }}>
-            Apply as Beneficiary
-          </Link>
-          <Link href="/join?type=needy" className="nav-btn-outline" style={{ textDecoration: 'none' }}>
-            Submit Needy Requisition
-          </Link>
-        </div>
       </div>
 
       {/* Navigation to other categories */}

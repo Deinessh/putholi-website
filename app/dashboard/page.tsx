@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../../lib/AuthContext';
 import { useRouter } from 'next/navigation';
+import { HEADER_LOGO_BASE64 } from '../headerLogoBase64';
 
 export default function Dashboard() {
     const { user, token, isLoading } = useAuth();
@@ -12,23 +13,12 @@ export default function Dashboard() {
     const [pdfLoading, setPdfLoading] = useState(false);
     const [formPdfLoading, setFormPdfLoading] = useState(false);
     const [photoBase64, setPhotoBase64] = useState<string | null>(null);
-    const [logoBase64, setLogoBase64] = useState<string | null>(null);
 
     useEffect(() => {
         if (!isLoading && !user) {
             router.push('/login');
         }
     }, [user, isLoading, router]);
-
-    useEffect(() => {
-        // Fetch Header Logo via server-side proxy to get Base64 Data URI
-        fetch(`/api/proxy-image?url=${encodeURIComponent('https://admin.putholi.org/images/putholi_logo.png')}`)
-        .then(res => res.json())
-        .then(data => {
-            if (data.dataUri) setLogoBase64(data.dataUri);
-        })
-        .catch(err => console.error('Error fetching logo proxy:', err));
-    }, []);
 
     useEffect(() => {
         if (token) {
@@ -107,7 +97,6 @@ export default function Dashboard() {
     const photoPath = membership?.files?.photo;
     const photoUrl = photoPath ? `https://admin.putholi.org/storage/${photoPath}` : null;
     const displayPhoto = photoBase64 || photoUrl;
-    const displayLogo = logoBase64 || '/images/putholi_logo.png';
 
     const commonKeys = ['name', 'fatherHusbandName', 'dob', 'age', 'phone', 'email', 'address', 'membership_id', 'membership_type', 'govt_id_no', 'stateCode', 'utCode', 'districtCode', 'talukCode'];
 
@@ -201,7 +190,7 @@ export default function Dashboard() {
                 )}
             </div>
 
-            {/* HIDDEN PRINTABLE APPLICATION FORM TEMPLATE - MATCHING ADMIN FORMAT EXACTLY (185mm Width to Fit A4 Margin Perfectly) */}
+            {/* HIDDEN PRINTABLE APPLICATION FORM TEMPLATE - MATCHING ADMIN HEADER & LAYOUT EXACTLY */}
             {membership && (
                 <div id="form-content" style={{ display: 'none', width: '185mm', minHeight: '270mm', backgroundColor: 'white', padding: '10mm', fontFamily: 'Arial, sans-serif', color: '#0f172a', position: 'relative', boxSizing: 'border-box', margin: '0 auto' }}>
                     {/* Passport Photo Frame in Top Right Corner */}
@@ -213,13 +202,14 @@ export default function Dashboard() {
                         )}
                     </div>
 
-                    {/* Header Logo */}
-                    <div style={{ textAlign: 'center', marginBottom: '20px', paddingRight: '35mm' }}>
-                        <img src={displayLogo} alt="Putholi Header" style={{ maxWidth: '100%', height: 'auto', display: 'inline-block' }} />
+                    {/* Header Logo Banner */}
+                    <div style={{ textAlign: 'center', marginBottom: '15px', paddingRight: '35mm' }}>
+                        <img src={HEADER_LOGO_BASE64} alt="Putholi Header" style={{ maxWidth: '100%', height: 'auto', display: 'inline-block' }} />
                     </div>
 
-                    <div style={{ textAlign: 'center', marginBottom: '15px' }}>
-                        <span style={{ fontWeight: 'bold', textDecoration: 'underline', fontSize: '15px', color: '#0f172a' }}>Membership Application Form</span>
+                    {/* Subtitle */}
+                    <div style={{ textAlign: 'left', marginBottom: '12px' }}>
+                        <span style={{ fontWeight: 'bold', fontSize: '14px', color: '#334155' }}>Membership Application Form</span>
                     </div>
 
                     {/* Member ID Bar */}
@@ -298,7 +288,7 @@ export default function Dashboard() {
                 <div id="id-card-content" style={{ display: 'none', width: '86mm', height: '54mm', backgroundColor: 'white', position: 'relative', overflow: 'hidden', fontFamily: 'Arial, sans-serif', border: '1px solid #1e3a8a', boxSizing: 'border-box' }}>
                     {/* Header Bar */}
                     <div style={{ height: '11mm', backgroundColor: '#1e3a8a', color: 'white', display: 'flex', alignItems: 'center', padding: '0 3mm', gap: '2.5mm' }}>
-                        <img src={displayLogo} alt="Logo" style={{ height: '8.5mm', width: '8.5mm', objectFit: 'contain', background: 'white', borderRadius: '50%', padding: '1px' }} />
+                        <img src="/images/putholi_logo.png" alt="Logo" style={{ height: '8.5mm', width: '8.5mm', objectFit: 'contain', background: 'white', borderRadius: '50%', padding: '1px' }} />
                         <div style={{ flex: 1 }}>
                             <h4 style={{ margin: 0, fontSize: '2.8mm', fontWeight: 'bold', letterSpacing: '0.2px', textTransform: 'uppercase', lineHeight: '1.1', color: '#ffffff' }}>PUTHOLI EMPOWERMENT SOCIETY</h4>
                             <p style={{ margin: 0, fontSize: '1.8mm', color: '#cbd5e1', lineHeight: '1' }}>Reg No.302/2018 Act xxi of Societies Act 1860</p>

@@ -48,7 +48,7 @@ export default function Dashboard() {
             const html2pdf = (await import('html2pdf.js')).default;
             await html2pdf().set({
                 margin: 0,
-                filename: `Putholi_ID_${membership.data.membership_id}.pdf`,
+                filename: `${membership.data.membership_id}.pdf`,
                 image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { scale: 3, useCORS: true }, // High scale for crisp text
                 jsPDF: { unit: 'mm', format: [86, 54], orientation: 'landscape' } // Standard ID card size 86x54mm Landscape
@@ -66,7 +66,7 @@ export default function Dashboard() {
             const html2pdf = (await import('html2pdf.js')).default;
             await html2pdf().set({
                 margin: 10,
-                filename: `Putholi_Application_${membership.data.membership_id}.pdf`,
+                filename: `${membership.data.membership_id}.pdf`,
                 image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { scale: 2, useCORS: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }

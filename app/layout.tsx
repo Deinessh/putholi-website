@@ -9,8 +9,13 @@ import VisitorCounter from './components/VisitorCounter';
 import { AuthProvider } from '../lib/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'Putholi Empowerment Society',
-  description: 'Socio-economic development for the downtrodden & oppressed people.',
+  title: 'Putholi',
+  description: 'Putholi Empowerment Society - Socio-economic development for the downtrodden & oppressed people.',
+  icons: {
+    icon: '/images/putholi_logo.png',
+    shortcut: '/images/putholi_logo.png',
+    apple: '/images/putholi_logo.png',
+  },
 };
 
 export default function RootLayout({

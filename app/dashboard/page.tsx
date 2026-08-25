@@ -38,21 +38,20 @@ export default function Dashboard() {
     }, [token]);
 
     const isNeedy = membership?.data?.membership_type === 'needy';
-    const canDownloadID = isNeedy || membership?.status === 'approved';
 
     const handleDownloadIDCard = async () => {
-        if (!canDownloadID) return;
+        if (isNeedy || membership?.status !== 'approved') return;
         setPdfLoading(true);
         const element = document.getElementById('id-card-content');
         if (element) {
-            element.style.display = 'block'; // Make it visible for html2pdf rendering
+            element.style.display = 'block';
             const html2pdf = (await import('html2pdf.js')).default;
             await html2pdf().set({
                 margin: 0,
                 filename: `${membership.data.membership_id}.pdf`,
                 image: { type: 'jpeg', quality: 1.0 },
-                html2canvas: { scale: 3, useCORS: true }, // High scale for crisp text
-                jsPDF: { unit: 'mm', format: [86, 54], orientation: 'landscape' } // Standard ID card size 86x54mm Landscape
+                html2canvas: { scale: 3, useCORS: true },
+                jsPDF: { unit: 'mm', format: [86, 54], orientation: 'landscape' }
             }).from(element).save();
             element.style.display = 'none';
         }
@@ -67,7 +66,7 @@ export default function Dashboard() {
             const html2pdf = (await import('html2pdf.js')).default;
             await html2pdf().set({
                 margin: 10,
-                filename: `${membership.data.membership_id}.pdf`,
+                filename: `${membership.data.membership_id}_form.pdf`,
                 image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { scale: 2, useCORS: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
@@ -82,6 +81,8 @@ export default function Dashboard() {
 
     const photoPath = membership?.files?.photo;
     const photoUrl = photoPath ? `https://admin.putholi.org/storage/${photoPath}` : null;
+
+    const commonKeys = ['name', 'fatherHusbandName', 'dob', 'age', 'phone', 'email', 'address', 'membership_id', 'membership_type', 'govt_id_no', 'stateCode', 'utCode', 'districtCode', 'talukCode'];
 
     return (
         <div className="container" style={{ padding: 'var(--spacing-2xl) 0', maxWidth: '800px' }}>
@@ -104,10 +105,10 @@ export default function Dashboard() {
                                 borderRadius: '9999px',
                                 fontWeight: 'bold',
                                 textTransform: 'capitalize',
-                                backgroundColor: isNeedy ? '#dcfce7' : (membership.status === 'approved' ? '#dcfce7' : (membership.status === 'rejected' ? '#fee2e2' : '#fef08a')),
-                                color: isNeedy ? '#166534' : (membership.status === 'approved' ? '#166534' : (membership.status === 'rejected' ? '#991b1b' : '#854d0e'))
+                                backgroundColor: membership.status === 'approved' ? '#dcfce7' : (membership.status === 'rejected' ? '#fee2e2' : '#fef08a'),
+                                color: membership.status === 'approved' ? '#166534' : (membership.status === 'rejected' ? '#991b1b' : '#854d0e')
                             }}>
-                                {isNeedy ? 'Active (Direct)' : membership.status}
+                                {membership.status}
                             </span>
                         </div>
 
@@ -127,31 +128,27 @@ export default function Dashboard() {
                         </div>
 
                         <div style={{ display: 'flex', gap: '1rem', borderTop: '1px solid #e2e8f0', paddingTop: '1.5rem', flexWrap: 'wrap' }}>
-                            <button 
-                                onClick={handleDownloadIDCard} 
-                                disabled={!canDownloadID || pdfLoading} 
-                                className="btn btn-primary" 
-                                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: !canDownloadID ? 0.5 : 1, cursor: !canDownloadID ? 'not-allowed' : 'pointer' }}
-                            >
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                                {pdfLoading ? 'Generating...' : 'Download ID Card'}
-                            </button>
+                            {!isNeedy && (
+                                <button 
+                                    onClick={handleDownloadIDCard} 
+                                    disabled={membership.status !== 'approved' || pdfLoading} 
+                                    className="btn btn-primary" 
+                                    style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: membership.status !== 'approved' ? 0.5 : 1, cursor: membership.status !== 'approved' ? 'not-allowed' : 'pointer' }}
+                                >
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                                    {pdfLoading ? 'Generating...' : 'Download ID Card'}
+                                </button>
+                            )}
 
                             <button onClick={handleDownloadForm} disabled={formPdfLoading} className="btn" style={{ backgroundColor: '#f1f5f9', color: '#334155', border: '1px solid #cbd5e1' }}>
                                 {formPdfLoading ? 'Generating...' : 'Download Application Form'}
                             </button>
                         </div>
 
-                        {isNeedy ? (
-                            <p style={{ color: '#16a34a', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '1rem' }}>
-                                * NEEDY ID Card is ready for instant download (No admin approval required).
+                        {!isNeedy && membership.status === 'pending' && (
+                            <p style={{ color: '#64748b', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '1rem' }}>
+                                * Beneficiary application is currently under review by administration. ID Card download will be enabled once approved.
                             </p>
-                        ) : (
-                            membership.status === 'pending' && (
-                                <p style={{ color: '#64748b', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '1rem' }}>
-                                    * Beneficiary application is currently under review by administration. ID Card download will be enabled once approved.
-                                </p>
-                            )
                         )}
                         
                         {/* Visible Form Details */}
@@ -177,8 +174,104 @@ export default function Dashboard() {
                 )}
             </div>
 
-            {/* HIDDEN LANDSCAPE ID CARD TEMPLATE (CR80 Standard Size: 86mm x 54mm) */}
+            {/* HIDDEN PRINTABLE APPLICATION FORM TEMPLATE WITH TOP RIGHT PHOTO */}
             {membership && (
+                <div id="form-content" style={{ display: 'none', width: '210mm', backgroundColor: 'white', padding: '15mm', fontFamily: 'Arial, sans-serif', color: '#0f172a', position: 'relative', boxSizing: 'border-box' }}>
+                    {/* Passport Photo Frame in Top Right Side Corner */}
+                    <div style={{ position: 'absolute', top: '15mm', right: '15mm', width: '30mm', height: '38mm', border: '1.5px solid #1e3a8a', backgroundColor: '#f8fafc', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', borderRadius: '2px' }}>
+                        {photoUrl ? (
+                            <img src={photoUrl} alt="Photo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        ) : (
+                            <span style={{ fontSize: '9px', color: '#94a3b8', textAlign: 'center', fontWeight: 'bold' }}>PASSPORT<br />PHOTO</span>
+                        )}
+                    </div>
+
+                    {/* Form Header */}
+                    <div style={{ textAlign: 'center', marginBottom: '20px', paddingRight: '35mm' }}>
+                        <h2 style={{ margin: 0, fontSize: '18px', color: '#1e3a8a', fontWeight: 'bold' }}>PUTHOLI EMPOWERMENT SOCIETY, PUDUCHERRY</h2>
+                        <p style={{ margin: '4px 0', fontSize: '12px', color: '#475569' }}>Regn No.302/2018 (Act XXI of Societies Act 1860)</p>
+                        <p style={{ margin: '2px 0', fontSize: '11px', color: '#64748b' }}>(For the Socio-Economic Development of SC/ST/OBC Community)</p>
+                        <p style={{ margin: '2px 0', fontSize: '11px', color: '#64748b' }}>Address: II Floor, No.16, 6th Cross Extn., Anna Nagar, Puducherry-605005</p>
+                        <p style={{ margin: '2px 0', fontSize: '11px', color: '#64748b' }}>Contact No. +91 9444 161 164 | Email: putholisociety@gmail.com</p>
+                    </div>
+
+                    <h3 style={{ textAlign: 'center', color: '#1e3a8a', margin: '20px 0 15px 0', borderBottom: '1px solid #cbd5e1', paddingBottom: '5px' }}>
+                        Membership Application Form
+                    </h3>
+
+                    {/* Member ID Bar */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#f8fafc', padding: '10px', border: '1px solid #e2e8f0', marginBottom: '20px' }}>
+                        <div><strong>Member ID:</strong> <span style={{ color: '#b91c1c' }}>{membership.data.membership_id}</span></div>
+                        <div style={{ textTransform: 'capitalize' }}><strong>Type:</strong> {membership.data.membership_type}</div>
+                    </div>
+
+                    {/* Personal Details Table */}
+                    <div style={{ marginBottom: '20px' }}>
+                        <h4 style={{ color: '#1e3a8a', borderBottom: '2px solid #1e3a8a', paddingBottom: '5px', marginBottom: '10px', fontSize: '14px', fontWeight: 'bold' }}>Personal Details</h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #e2e8f0', fontSize: '12px' }}>
+                            <tbody>
+                                <tr>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0', fontWeight: 'bold', width: '30%' }}>Name</td>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{membership.data.name || 'N/A'}</td>
+                                </tr>
+                                <tr>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0', fontWeight: 'bold' }}>Father/Husband Name</td>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{membership.data.fatherHusbandName || 'N/A'}</td>
+                                </tr>
+                                <tr>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0', fontWeight: 'bold' }}>Date of Birth / Age</td>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{membership.data.dob || 'N/A'} / {membership.data.age || 'N/A'}</td>
+                                </tr>
+                                <tr>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0', fontWeight: 'bold' }}>Contact & Email</td>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{membership.data.phone || 'N/A'} | {membership.data.email || 'N/A'}</td>
+                                </tr>
+                                <tr>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0', fontWeight: 'bold' }}>Address</td>
+                                    <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>{membership.data.address || 'N/A'}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {/* Category Specific Details Table */}
+                    <div style={{ marginBottom: '40px' }}>
+                        <h4 style={{ color: '#1e3a8a', borderBottom: '2px solid #1e3a8a', paddingBottom: '5px', marginBottom: '10px', fontSize: '14px', fontWeight: 'bold' }}>
+                            {isNeedy ? 'Needy Application Details' : 'Beneficiary Application Details'}
+                        </h4>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #e2e8f0', fontSize: '12px' }}>
+                            <tbody>
+                                {Object.entries(membership.data).map(([key, value]) => {
+                                    if (commonKeys.includes(key)) return null;
+                                    return (
+                                        <tr key={key}>
+                                            <td style={{ padding: '8px', border: '1px solid #e2e8f0', fontWeight: 'bold', width: '30%', textTransform: 'capitalize' }}>
+                                                {key.replace(/_/g, ' ')}
+                                            </td>
+                                            <td style={{ padding: '8px', border: '1px solid #e2e8f0' }}>
+                                                {Array.isArray(value) ? value.join(', ') : String(value)}
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {/* Footer Signatures */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '60px', padding: '0 20px' }}>
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{ borderTop: '1px solid #000', width: '200px', paddingTop: '5px', fontSize: '12px' }}>Applicant Signature</div>
+                        </div>
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{ borderTop: '1px solid #000', width: '200px', paddingTop: '5px', fontSize: '12px' }}>Authorized Signatory</div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* HIDDEN LANDSCAPE ID CARD TEMPLATE (CR80 Standard Size: 86mm x 54mm) - FOR BENEFICIARY ONLY */}
+            {membership && !isNeedy && (
                 <div id="id-card-content" style={{ display: 'none', width: '86mm', height: '54mm', backgroundColor: 'white', position: 'relative', overflow: 'hidden', fontFamily: 'Arial, sans-serif', border: '1px solid #1e3a8a', boxSizing: 'border-box' }}>
                     {/* Header Bar */}
                     <div style={{ height: '11mm', backgroundColor: '#1e3a8a', color: 'white', display: 'flex', alignItems: 'center', padding: '0 3mm', gap: '2.5mm' }}>

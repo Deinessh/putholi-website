@@ -38,9 +38,10 @@ export default function Dashboard() {
     }, [token]);
 
     const isNeedy = membership?.data?.membership_type === 'needy';
+    const canDownloadID = isNeedy || membership?.status === 'approved';
 
     const handleDownloadIDCard = async () => {
-        if (isNeedy) return;
+        if (!canDownloadID) return;
         setPdfLoading(true);
         const element = document.getElementById('id-card-content');
         if (element) {
@@ -103,10 +104,10 @@ export default function Dashboard() {
                                 borderRadius: '9999px',
                                 fontWeight: 'bold',
                                 textTransform: 'capitalize',
-                                backgroundColor: membership.status === 'approved' ? '#dcfce7' : (membership.status === 'rejected' ? '#fee2e2' : '#fef08a'),
-                                color: membership.status === 'approved' ? '#166534' : (membership.status === 'rejected' ? '#991b1b' : '#854d0e')
+                                backgroundColor: isNeedy ? '#dcfce7' : (membership.status === 'approved' ? '#dcfce7' : (membership.status === 'rejected' ? '#fee2e2' : '#fef08a')),
+                                color: isNeedy ? '#166534' : (membership.status === 'approved' ? '#166534' : (membership.status === 'rejected' ? '#991b1b' : '#854d0e'))
                             }}>
-                                {membership.status}
+                                {isNeedy ? 'Active (Direct)' : membership.status}
                             </span>
                         </div>
 
@@ -126,33 +127,31 @@ export default function Dashboard() {
                         </div>
 
                         <div style={{ display: 'flex', gap: '1rem', borderTop: '1px solid #e2e8f0', paddingTop: '1.5rem', flexWrap: 'wrap' }}>
-                            {!isNeedy && (
-                                <button 
-                                    onClick={handleDownloadIDCard} 
-                                    disabled={membership.status !== 'approved' || pdfLoading} 
-                                    className="btn btn-primary" 
-                                    style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: membership.status !== 'approved' ? 0.5 : 1, cursor: membership.status !== 'approved' ? 'not-allowed' : 'pointer' }}
-                                >
-                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                                    {pdfLoading ? 'Generating...' : 'Download ID Card'}
-                                </button>
-                            )}
+                            <button 
+                                onClick={handleDownloadIDCard} 
+                                disabled={!canDownloadID || pdfLoading} 
+                                className="btn btn-primary" 
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: !canDownloadID ? 0.5 : 1, cursor: !canDownloadID ? 'not-allowed' : 'pointer' }}
+                            >
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                                {pdfLoading ? 'Generating...' : 'Download ID Card'}
+                            </button>
 
                             <button onClick={handleDownloadForm} disabled={formPdfLoading} className="btn" style={{ backgroundColor: '#f1f5f9', color: '#334155', border: '1px solid #cbd5e1' }}>
                                 {formPdfLoading ? 'Generating...' : 'Download Application Form'}
                             </button>
                         </div>
 
-                        {isNeedy && (
-                            <p style={{ color: '#64748b', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '1rem' }}>
-                                * Note: ID Card generation is applicable for Beneficiary members.
+                        {isNeedy ? (
+                            <p style={{ color: '#16a34a', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '1rem' }}>
+                                * NEEDY ID Card is ready for instant download (No admin approval required).
                             </p>
-                        )}
-
-                        {!isNeedy && membership.status === 'pending' && (
-                            <p style={{ color: '#64748b', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '1rem' }}>
-                                * Your application is currently under review by the administration. You will be able to download your ID Card once approved.
-                            </p>
+                        ) : (
+                            membership.status === 'pending' && (
+                                <p style={{ color: '#64748b', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '1rem' }}>
+                                    * Beneficiary application is currently under review by administration. ID Card download will be enabled once approved.
+                                </p>
+                            )
                         )}
                         
                         {/* Visible Form Details */}
@@ -179,7 +178,7 @@ export default function Dashboard() {
             </div>
 
             {/* HIDDEN LANDSCAPE ID CARD TEMPLATE (CR80 Standard Size: 86mm x 54mm) */}
-            {membership && !isNeedy && (
+            {membership && (
                 <div id="id-card-content" style={{ display: 'none', width: '86mm', height: '54mm', backgroundColor: 'white', position: 'relative', overflow: 'hidden', fontFamily: 'Arial, sans-serif', border: '1px solid #1e3a8a', boxSizing: 'border-box' }}>
                     {/* Header Bar */}
                     <div style={{ height: '11mm', backgroundColor: '#1e3a8a', color: 'white', display: 'flex', alignItems: 'center', padding: '0 3mm', gap: '2.5mm' }}>
@@ -216,7 +215,7 @@ export default function Dashboard() {
                             </div>
                         </div>
 
-                        {/* Right Side: Photo & Authorized Signatory */}
+                        {/* Right Side Corner: Photo & Authorized Signatory */}
                         <div style={{ width: '23mm', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}>
                             <div style={{ width: '21mm', height: '25mm', border: '1px solid #94a3b8', borderRadius: '1mm', overflow: 'hidden', backgroundColor: '#f8fafc', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 {photoUrl ? (

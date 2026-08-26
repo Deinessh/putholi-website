@@ -23,12 +23,13 @@ export default function HeaderBanner() {
 
               <div style={{ color: '#7f1d1d', fontWeight: '800', fontSize: '1.05rem', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', textShadow: '0 1px 1px rgba(0,0,0,0.1)', textAlign: 'center' }}>
                 <span style={{ letterSpacing: '0.28em', display: 'block', textTransform: 'uppercase', fontStyle: 'normal', fontWeight: '900', paddingLeft: '0.28em' }}>PAY BACK</span>
-                <span style={{ display: 'block', fontStyle: 'italic' }}>to Your Society</span>
-                <span style={{ fontStyle: 'normal', fontSize: '0.95rem', display: 'block', marginTop: '2px' }}>-by Dr.B.R.Ambedkar</span>
+                <span style={{ display: 'inline-block', fontStyle: 'italic', position: 'relative' }}>
+                  to Your Society
+                  {/* Bottom Right Quote Mark right after Society */}
+                  <span style={{ position: 'absolute', top: '-6px', right: '-24px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
+                </span>
+                <span style={{ fontStyle: 'normal', fontSize: '0.95rem', display: 'block', marginTop: '4px' }}>-by Dr.B.R.Ambedkar</span>
               </div>
-
-              {/* Bottom Right Quote Mark */}
-              <span style={{ position: 'absolute', bottom: '-15px', right: '5px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 

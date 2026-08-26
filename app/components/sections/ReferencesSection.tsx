@@ -88,7 +88,7 @@ export default function ReferencesSection() {
                     <div style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-primary)', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                       <p>Dear brothers and sisters,</p>
                       <p>
-                        Putholi Empowerment Society is a voluntary organization registered with Central Government (under section XXI of Societies Registration Act, 1860) vide Regn. No.302/2018, with common interest to serve for the upliftment of unprivileged people, still suffering a lot, without proper support. We have our Registered Office functioning at Puducherry and units functioning at: Karaikal, Mayiladuthurai, Thanjavur, Vellore, Chennai, Coimbatore, Villupuram, Cuddalore, Neyveli, Chidambaram, Bengaluru (Karnataka) and Tuticorin.
+                        Putholi Empowerment Society is a voluntary organization registered with Central Government (under section XXI of Societies Registration Act, 1860) vide Regn.No,302/2018, with common interest to serve for the upliftment of unprivileged people, still suffering a lot, without proper support. We have our Registered Office functioning at Puducherry and units functioning at: Karaikal, Mayiladuthurai, Thanjavur, Vellore, Chennai, Coimbatore, Villupuram, Cuddalore, Neyveli, Chidambaram, Bengaluru (Karnataka) and Tuticorin.
                       </p>
                       <p>
                         We intend to extend, initially our activities to entire Tamil Nadu & Puducherry and the other parts of our country later, where our service is required. Virtual units, with Co-ordinators with a skeleton members are functioning at Thiruvallur, Salem, Pudukkottai, Virudhunagar, Karur, Perambalur, Thiruvarur, Nagapattinam, Tiruchirapalli, Madurai, Sivagangai, Theni, Kanyakumari, Erode, Tiruppur, Mettur, Tirunelveli and Cochin (Kerala).
@@ -169,8 +169,8 @@ export default function ReferencesSection() {
                         <div style={{ padding: '1rem', backgroundColor: 'white', textAlign: 'center', fontSize: '0.9rem', fontWeight: 600 }}>Guidance Program by Income Tax & Postal Services Officers at Mayiladuthurai (02.06.2019)</div>
                       </div>
                       <div className="hover-lift" style={{ borderRadius: '0.5rem', overflow: 'hidden', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-                        <img src="/images/Screenshot 2026-08-01 193518.png" alt="Guidance on Government Loan Schemes for Entrepreneurship at Kuttalam" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-                        <div style={{ padding: '1rem', backgroundColor: 'white', textAlign: 'center', fontSize: '0.9rem', fontWeight: 600 }}>Guidance on Govt. Loan Schemes for Entrepreneurship at Kuttalam (27.10.2019)</div>
+                        <img src="/images/Screenshot 2026-08-01 193518.png" alt="Guidance on Government Loan Schemes for Entrepreneurship at Kuttralam" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+                        <div style={{ padding: '1rem', backgroundColor: 'white', textAlign: 'center', fontSize: '0.9rem', fontWeight: 600 }}>Guidance on Govt. Loan Schemes for Entrepreneurship at Kuttralam (27.10.2019)</div>
                       </div>
                     </div>
                   </section>

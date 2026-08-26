@@ -22,13 +22,13 @@ export default function Membership() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="glass-panel" style={{ marginBottom: '3rem' }}>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem', textAlign: 'justify' }}>
             "Putholi Empowerment Society" welcomes the like-minded people with generosity for taking care on solving the problems of social and economic inequalities in the society. It also welcomes the people who have been benefitted by the Reservation Policy which was brought by Babasaheb Dr.B.R.Ambedkar, to take the responsibility of his principal requisition of "PAYBACK TO SOCIETY", on thankfulness to his efforts for constituted the reservation-opportunity in Indian Constitution.
           </p>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem', textAlign: 'justify' }}>
             PUTHOLI (new light) put-forth the requisition to the people (who got the benefits by education, job opportunities & other form) to payback their contribution for society by their <strong>"Time, Knowledge, Experience & Little Money"</strong>.
           </p>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', textAlign: 'justify' }}>
             As a little contribution by money, they are welcome to join as a 'Member of Putholi Empowerment Society' by paying the Lifetime Membership Fee:
           </p>
         </motion.div>

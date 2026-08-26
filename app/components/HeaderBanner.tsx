@@ -1,32 +1,32 @@
-import Image from 'next/image';
+"use client";
 
 const members = [
   { name: 'Jyotirao Phule', src: '/images/phule.png' },
   { name: 'B.R. Ambedkar', src: '/images/ambedkar.png' },
-  { name: 'Buddha', src: '/images/buddha.png' },
-  { name: 'Periyar', src: '/images/periyar.png' }
+  { name: 'Gautama Buddha', src: '/images/buddha.png' },
+  { name: 'Periyar E. V. Ramasamy', src: '/images/periyar.png' }
 ];
 
 export default function HeaderBanner() {
   return (
-    <div style={{ backgroundColor: 'rgba(121, 182, 248, 1)', padding: '0.85rem 0.5rem', borderBottom: '1px solid #e2e8f0', width: '100%' }}>
-      <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
-
+    <div style={{ backgroundColor: '#ffffff', borderBottom: '2px solid var(--border-color)', padding: '0.6rem 0' }}>
+      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+        
         {/* 3-Column Layout for Desktop */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
 
           {/* Left Column: Quote with Decorative Large Quotation Marks */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-            <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '240px' }}>
+            <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '250px' }}>
               {/* Top Left Quote Mark */}
-              <span style={{ position: 'absolute', top: '-10px', left: '50px', fontSize: '3rem', lineHeight: '1', color: '#fff700ff', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+              <span style={{ position: 'absolute', top: '-10px', left: '10px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 
-              <div style={{ color: '#fff700ff', fontWeight: '800', fontSize: '1.1rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 2px rgba(255,255,255,0.4)' }}>
-                PAY BACK<br />your society<br />by Dr.B.R.Ambedkar
+              <div style={{ color: '#7f1d1d', fontWeight: '800', fontSize: '1.05rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', textShadow: '0 1px 1px rgba(0,0,0,0.1)', textAlign: 'justify' }}>
+                PAY BACK<br />to Your Society<br /><span style={{ fontStyle: 'normal', fontSize: '0.95rem' }}>-by Dr.B.R.Ambedkar</span>
               </div>
 
               {/* Bottom Right Quote Mark */}
-              <span style={{ position: 'absolute', bottom: '-20px', right: '-5px', fontSize: '3rem', lineHeight: '1', color: '#fff700ff', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
+              <span style={{ position: 'absolute', bottom: '-15px', right: '10px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 
@@ -63,21 +63,21 @@ export default function HeaderBanner() {
             <p style={{ color: '#7f1d1d', fontSize: '0.9rem', margin: '0 0 0.2rem 0', fontWeight: 'bold' }}>(For the Socio-economic Development of SC,ST,OBC & Minorities)</p>
             <h1 style={{ color: '#1e3a8a', fontSize: '1.4rem', fontWeight: '900', margin: '0 0 0.2rem 0', textShadow: '1px 1px 2px rgba(255,255,255,0.5)' }}>புத்தொளி தன்னிறைவு சமுதாயம்</h1>
             <p style={{ color: '#1e3a8a', fontSize: '0.9rem', margin: 0, fontWeight: '600' }}>தமிழ்நாடு மற்றும் புதுச்சேரி</p>
-            <p style={{ color: '#7f1d1d', fontSize: '0.85rem', margin: '0 0 0.2rem 0', fontWeight: '600' }}>Reg No.302/2018 Act xxi of Societies Act 1860</p>
+            <p style={{ color: '#7f1d1d', fontSize: '0.85rem', margin: '0 0 0.2rem 0', fontWeight: '600' }}>Regn.No,302/2018 Act xxi of Societies Act 1860</p>
           </div>
 
           {/* Right Column: Quote with Decorative Large Quotation Marks */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '280px' }}>
               {/* Top Left Quote Mark */}
-              <span style={{ position: 'absolute', top: '-12px', left: '-5px', fontSize: '3rem', lineHeight: '1', color: '#fff700ff', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+              <span style={{ position: 'absolute', top: '-12px', left: '5px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 
-              <div style={{ color: '#fff700ff', fontWeight: '800', fontSize: '1.02rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 2px rgba(255,255,255,0.4)' }}>
-                Contribute your Time,<br />knowledge, experience<br />and a little money
+              <div style={{ color: '#7f1d1d', fontWeight: '800', fontSize: '1.02rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 1px rgba(0,0,0,0.1)' }}>
+                Contribute your Time,<br />Knowledge, Experience<br />and a Little Money
               </div>
 
               {/* Bottom Right Quote Mark */}
-              <span style={{ position: 'absolute', bottom: '-20px', right: '-5px', fontSize: '3rem', lineHeight: '1', color: '#fff700ff', opacity: 0.6, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
+              <span style={{ position: 'absolute', bottom: '-15px', right: '5px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 

@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-lg" style={{ alignItems: 'center' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.15rem', color: 'var(--text-primary)', lineHeight: '1.8' }}>
             <p>
-              "Putholi Empowerment Society" (herein after called as PESO) is a non-profit, non-religious & non-political voluntary organization, registered vide Regn No.302/2018 under Act XXI of Societies Act 1860, with Registration Department at Puducherry.
+              "Putholi Empowerment Society" (herein after called as PESO) is a non-profit, non-religious & non-political voluntary organization, registered vide Regn.No,302/2018 under Act XXI of Societies Act 1860, with Registration Department at Puducherry.
             </p>
             <p>
               PESO is on the move in Tamil Nadu and Puducherry, working for the Socio-Economic Development of down-trodden & Oppressed people and intend to serve to implement its objectives across the country with its registered office at Pondicherry and Administrative office at Chennai.

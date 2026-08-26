@@ -24,7 +24,7 @@ export default function AboutSection() {
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>
           <h1 style={{ color: 'var(--primary-color)' }}>About Putholi</h1>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-            "Putholi Empowerment Society" (herein after called as PESO) is a non-profit, non-religious & non-political voluntary organization, registered vide Regn No.302/2018 under Act XXI of Societies Act 1860, with Registration Department at Puducherry.
+            "Putholi Empowerment Society" (herein after called as PESO) is a non-profit, non-religious & non-political voluntary organization, registered vide Regn.No,302/2018 under Act XXI of Societies Act 1860, with Registration Department at Puducherry.
           </p>
         </motion.div>
 
@@ -108,7 +108,7 @@ export default function AboutSection() {
         <motion.section variants={itemVariants} className="glass-panel">
           <h2>Infrastructure Capacity</h2>
           <p style={{ marginBottom: '1rem' }}>
-            Registered Office at Puducherry and Administrative Office at Chennai are well equipped with necessary infrastructure having computers, printers, scanners, Display Boards, Furniture, Fixtures, & other training materials.
+            Registered Office at Puducherry and Administrative Office at Chennai are well equipped with necessary infrastructure having Computers, Printers, Scanners, Display Boards, Furniture, Fixtures, & other training materials.
           </p>
           <p>Similar office cum multi-purposes Centre will be set up initially in all the District Head Quarters:</p>
           <ul style={{ paddingLeft: '1.5rem', marginTop: '0.5rem' }}>

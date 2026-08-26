@@ -109,6 +109,46 @@ export default function Home() {
       <section id="about" style={{ paddingTop: '2rem' }}>
         <AboutSection />
       </section>
+
+      {/* Bank Account Details & QR Code Section (At the end of Home page) */}
+      <section id="donation-account" style={{ padding: '4rem 0', backgroundColor: '#f8fafc', borderTop: '2px solid #e2e8f0', marginTop: '3rem' }}>
+        <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1rem' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '2.5rem', color: 'var(--primary-color)', fontSize: '2.2rem', fontWeight: 'bold' }}>
+            Bank Account Details & Online Payment
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-xl" style={{ alignItems: 'stretch' }}>
+            {/* Left Column: Bank Account Details Card */}
+            <div className="glass-panel hover-lift" style={{ backgroundColor: '#ffffff', borderRadius: '1rem', border: '1px solid #e2e8f0', borderTop: '4px solid #15803d', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05)' }}>
+              <div>
+                <h3 style={{ color: '#15803d', fontSize: '1.6rem', fontWeight: 'bold', marginBottom: '1.5rem', borderBottom: '2px solid #f0fdf4', paddingBottom: '0.5rem' }}>
+                  Bank Account Details
+                </h3>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem', fontSize: '1.1rem', color: '#1e293b', marginBottom: '2rem' }}>
+                  <p style={{ margin: 0 }}><strong>Bank Name:</strong> CANARA BANK</p>
+                  <p style={{ margin: 0 }}><strong>Branch Details:</strong> Thiruvanmiyur, Chennai-600041</p>
+                  <p style={{ margin: 0 }}><strong>Account Name:</strong> Putholi Empowerment Society</p>
+                  <p style={{ margin: 0 }}><strong>Account Number:</strong> 110021534790</p>
+                  <p style={{ margin: 0 }}><strong>IFSC:</strong> CNRB0002649</p>
+                </div>
+              </div>
+
+              {/* Bottom Callout Note */}
+              <div style={{ backgroundColor: '#f0fdf4', padding: '1.25rem', borderRadius: '0.75rem', borderLeft: '4px solid #15803d', color: '#166534', fontSize: '0.98rem', lineHeight: '1.6' }}>
+                Apart from the stipulated contributions, donations and materials required to set up Centre for Career Guidance as they can / wish may be provided.
+              </div>
+            </div>
+
+            {/* Right Column: Canara Bank QR Code Card */}
+            <div className="glass-panel hover-lift" style={{ backgroundColor: '#ffffff', borderRadius: '1rem', border: '1px solid #e2e8f0', borderTop: '4px solid #0284c7', padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05)' }}>
+              <div style={{ width: '100%', maxWidth: '340px', textAlign: 'center' }}>
+                <img src="/images/qr_code.png" alt="Canara Bank Scan & Pay QR Code" style={{ width: '100%', height: 'auto', borderRadius: '0.75rem', display: 'block', margin: '0 auto', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

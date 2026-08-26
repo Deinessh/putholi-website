@@ -19,16 +19,16 @@ export default function HeaderBanner() {
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '250px' }}>
               {/* Top Left Quote Mark */}
-              <span style={{ position: 'absolute', top: '-10px', left: '10px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+              <span style={{ position: 'absolute', top: '-10px', left: '20px', fontSize: '2.8rem', lineHeight: '1', color: '#fff700ff', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 
-              <div style={{ color: '#7f1d1d', fontWeight: '800', fontSize: '1.05rem', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', textShadow: '0 1px 1px rgba(0,0,0,0.1)', textAlign: 'center' }}>
+              <div style={{ color: '#fff700ff', fontWeight: '800', fontSize: '1.05rem', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', textShadow: '0 1px 1px rgba(0,0,0,0.1)', textAlign: 'center' }}>
                 <span style={{ letterSpacing: '0.28em', display: 'block', textTransform: 'uppercase', fontStyle: 'normal', fontWeight: '900', paddingLeft: '0.28em' }}>PAY BACK</span>
                 <span style={{ display: 'inline-block', fontStyle: 'italic', position: 'relative' }}>
                   to Your Society
                   {/* Bottom Right Quote Mark right after Society */}
-                  <span style={{ position: 'absolute', top: '-6px', right: '-24px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
+                  <span style={{ position: 'absolute', top: '-6px', right: '-24px', fontSize: '2.0rem', lineHeight: '1', color: '#fff700ff', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
                 </span>
-                <span style={{ fontStyle: 'normal', fontSize: '0.95rem', display: 'block', marginTop: '4px' }}>-by Dr.B.R.Ambedkar</span>
+                <span style={{ fontStyle: 'normal', fontSize: '0.95rem', display: 'block', marginTop: '4px' }}>- by Dr.B.R.Ambedkar</span>
               </div>
             </div>
           </div>
@@ -73,14 +73,14 @@ export default function HeaderBanner() {
           <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 220px', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <div style={{ position: 'relative', padding: '0.6rem 1.4rem', maxWidth: '280px' }}>
               {/* Top Left Quote Mark */}
-              <span style={{ position: 'absolute', top: '-12px', left: '5px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+              <span style={{ position: 'absolute', top: '-12px', left: '5px', fontSize: '2.8rem', lineHeight: '1', color: '#fff700ff', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 
-              <div style={{ color: '#7f1d1d', fontWeight: '800', fontSize: '1.02rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 1px rgba(0,0,0,0.1)' }}>
+              <div style={{ color: '#fff700ff', fontWeight: '800', fontSize: '1.02rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.35', textShadow: '0 1px 1px rgba(0,0,0,0.1)' }}>
                 Contribute your Time,<br />Knowledge, Experience<br />and a Little Money
               </div>
 
               {/* Bottom Right Quote Mark */}
-              <span style={{ position: 'absolute', bottom: '-15px', right: '5px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
+              <span style={{ position: 'absolute', bottom: '-15px', right: '5px', fontSize: '2.8rem', lineHeight: '1', color: '#fff700ff', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 

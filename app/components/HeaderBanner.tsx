@@ -9,9 +9,9 @@ const members = [
 
 export default function HeaderBanner() {
   return (
-    <div style={{ backgroundColor: '#ffffff', borderBottom: '2px solid var(--border-color)', padding: '0.6rem 0' }}>
+    <div style={{ backgroundColor: '#6ab7f1', borderBottom: '2px solid var(--border-color)', padding: '0.6rem 0' }}>
       <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-        
+
         {/* 3-Column Layout for Desktop */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', width: '100%' }}>
 
@@ -21,12 +21,14 @@ export default function HeaderBanner() {
               {/* Top Left Quote Mark */}
               <span style={{ position: 'absolute', top: '-10px', left: '10px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 
-              <div style={{ color: '#7f1d1d', fontWeight: '800', fontSize: '1.05rem', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', textShadow: '0 1px 1px rgba(0,0,0,0.1)', textAlign: 'justify' }}>
-                PAY BACK<br />to Your Society<br /><span style={{ fontStyle: 'normal', fontSize: '0.95rem' }}>-by Dr.B.R.Ambedkar</span>
+              <div style={{ color: '#7f1d1d', fontWeight: '800', fontSize: '1.05rem', fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '1.4', textShadow: '0 1px 1px rgba(0,0,0,0.1)', textAlign: 'center' }}>
+                <span style={{ letterSpacing: '0.28em', display: 'block', textTransform: 'uppercase', fontStyle: 'normal', fontWeight: '900', paddingLeft: '0.28em' }}>PAY BACK</span>
+                <span style={{ display: 'block', fontStyle: 'italic' }}>to Your Society</span>
+                <span style={{ fontStyle: 'normal', fontSize: '0.95rem', display: 'block', marginTop: '2px' }}>-by Dr.B.R.Ambedkar</span>
               </div>
 
               {/* Bottom Right Quote Mark */}
-              <span style={{ position: 'absolute', bottom: '-15px', right: '10px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
+              <span style={{ position: 'absolute', bottom: '-15px', right: '5px', fontSize: '2.8rem', lineHeight: '1', color: '#b91c1c', opacity: 0.8, fontFamily: 'Georgia, serif' }}>&rdquo;</span>
             </div>
           </div>
 

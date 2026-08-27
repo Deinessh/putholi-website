@@ -18,7 +18,7 @@ export default function Membership() {
       <motion.div initial="hidden" animate="visible" variants={containerVariants}>
 
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h1 style={{ color: 'var(--primary-color)' }}>Member & Contribution</h1>
+          <h1 style={{ color: 'var(--primary-color)' }}>Membership & Contribution</h1>
         </motion.div>
 
         <motion.div variants={itemVariants} className="glass-panel" style={{ marginBottom: '3rem' }}>
@@ -36,7 +36,7 @@ export default function Membership() {
         <div className="grid md:grid-cols-2 gap-lg" style={{ marginBottom: '3rem' }}>
           {/* Fee Details */}
           <motion.div variants={itemVariants} className="glass-panel hover-lift" style={{ borderTop: '4px solid var(--primary-color)' }}>
-            <h2 style={{ color: 'var(--primary-color)', marginBottom: '1.5rem' }}>Member Fees</h2>
+            <h2 style={{ color: 'var(--primary-color)', marginBottom: '1.5rem' }}>Membership Fees</h2>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '1.1rem' }}>
               <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.5rem', borderBottom: '1px solid #e2e8f0' }}>
                 <span>Lifetime Membership Fee:</span> <strong style={{ color: 'var(--primary-color)', fontSize: '1.2rem' }}>Rs. 10,500/-</strong>
@@ -45,7 +45,7 @@ export default function Membership() {
             <div style={{ marginTop: '1rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
               <p>The people who like to become Lifetime Member can pay the Lifetime Membership Fee as <strong>Rs. 10,500/-</strong> online / Bank Transfer.</p>
             </div>
-            
+
             {/* QR Code */}
             <div style={{ marginTop: '1.5rem', textAlign: 'center', backgroundColor: '#f8fafc', padding: '1rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0' }}>
               <img src="/images/qr_code.png" alt="Canara Bank Scan & Pay QR Code" style={{ maxWidth: '240px', width: '100%', height: 'auto', borderRadius: '0.5rem', margin: '0 auto', display: 'block', boxShadow: '0 4px 12px rgba(0,0,0,0.06)' }} />

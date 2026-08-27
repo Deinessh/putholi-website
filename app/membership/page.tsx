@@ -42,10 +42,16 @@ export default function Membership() {
                 <span>Lifetime Membership Fee:</span> <strong style={{ color: 'var(--primary-color)', fontSize: '1.2rem' }}>Rs. 10,500/-</strong>
               </li>
             </ul>
-            <div style={{ marginTop: '1.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
+            <div style={{ marginTop: '1rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
               <p>The people who like to become Lifetime Member can pay the Lifetime Membership Fee as <strong>Rs. 10,500/-</strong> online / Bank Transfer.</p>
             </div>
-            <div style={{ marginTop: '2rem' }}>
+            
+            {/* QR Code */}
+            <div style={{ marginTop: '1.5rem', textAlign: 'center', backgroundColor: '#f8fafc', padding: '1rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0' }}>
+              <img src="/images/qr_code.png" alt="Canara Bank Scan & Pay QR Code" style={{ maxWidth: '240px', width: '100%', height: 'auto', borderRadius: '0.5rem', margin: '0 auto', display: 'block', boxShadow: '0 4px 12px rgba(0,0,0,0.06)' }} />
+            </div>
+
+            <div style={{ marginTop: '1.5rem' }}>
               <a href="/join" className="nav-btn" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>Fill Member Form (Online)</a>
             </div>
           </motion.div>
